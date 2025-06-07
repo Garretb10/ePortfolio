@@ -1,57 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Initial Code Review – CS 499</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f8;
-            color: #333;
-        }
-        header {
-            background: #1e293b;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            background: #334155;
-            padding: 1rem 0;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #38bdf8;
-        }
-        main {
-            padding: 2rem;
-            max-width: 900px;
-            margin: auto;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background: #3b82f6;
-            color: white;
-            border-radius: 4px;
-            text-decoration: none;
-        }
-        .btn:hover {
-            background: #2563eb;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Initial Code Review – CS 499</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --surface: #1c1f26;
+      --text: #f0f0f0;
+      --muted: #aaa;
+      --highlight: #61dafb;
+      --accent: #38bdf8;
+      --hover: #0ea5e9;
+      --shadow: rgba(0, 0, 0, 0.4);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background-color: #1e293b;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin: 0;
+    }
+
+    header p {
+      color: var(--muted);
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background-color: #334155;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      background-color: var(--surface);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px var(--shadow);
+      border: 1px solid #2a2d33;
+    }
+
+    h2 {
+      color: var(--highlight);
+      font-size: 1.6rem;
+      margin-top: 0;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .download-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: var(--accent);
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .download-button:hover {
+      background: var(--hover);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -69,9 +127,19 @@
   <main>
     <section>
       <h2>Video Walkthrough</h2>
-      <p>This video presents an overview of the original artifact prior to any enhancements.</p>
-      <a class="download-button" href="https://www.dropbox.com/scl/fi/2sc592wrdwv6em60p5lys/Initial-Code-Review.mp4?rlkey=wyus88aie8lqdgecnd5gv4vx7&st=uj71p9tj&dl=0" target="_blank">Watch Code Review Video</a>
+      <p>This video presents an overview of the original artifact prior to any enhancements. It discusses the app’s initial structure, identifies opportunities for improvement, and outlines the planned modifications for each of the three core areas.</p>
+      <a
+        class="download-button"
+        href="https://www.dropbox.com/scl/fi/2sc592wrdwv6em60p5lys/Initial-Code-Review.mp4?rlkey=wyus88aie8lqdgecnd5gv4vx7&st=uj71p9tj&dl=0"
+        target="_blank"
+      >
+        Watch Code Review Video
+      </a>
     </section>
   </main>
+
+  <footer>
+    © 2025 Garret Blake. All rights reserved.
+  </footer>
 </body>
 </html>
