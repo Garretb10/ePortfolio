@@ -1,18 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Initial Code Review – CS 499</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f8;
+            color: #333;
+        }
+        header {
+            background: #1e293b;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background: #334155;
+            padding: 1rem 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #38bdf8;
+        }
+        main {
+            padding: 2rem;
+            max-width: 900px;
+            margin: auto;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #3b82f6;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #2563eb;
+        }
+    </style>
 </head>
 <body>
-    <h1>Initial Code Review</h1>
-    <p>This video walks through the original version of the artifact, including its current structure, logic, and areas for planned improvement across the three core Computer Science categories.</p>
+    <header>
+        <h1>Initial Code Review</h1>
+        <p>CS 499 Capstone – Artifact Walkthrough</p>
+    </header>
 
-    <p>
-        <a href="https://www.dropbox.com/scl/fi/2sc592wrdwv6em60p5lys/Initial-Code-Review.mp4?rlkey=wyus88aie8lqdgecnd5gv4vx7&st=rb40di8h&dl=0">
-            Watch Code Review Video
-        </a>
-    </p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="software_design.html">Software Design</a>
+        <a href="algorithms.html">Algorithms</a>
+        <a href="databases.html">Databases</a>
+    </nav>
 
-    <p><a href="index.html">← Back to Home</a></p>
+    <main>
+        <h2>Video Walkthrough</h2>
+        <p>This video presents an overview of the original artifact prior to any enhancements. It discusses the app’s initial structure, identifies opportunities for improvement, and outlines the planned modifications for each of the three core areas.</p>
+
+        <a class="btn" href="https://www.dropbox.com/scl/fi/2sc592wrdwv6em60p5lys/Initial-Code-Review.mp4?rlkey=wyus88aie8lqdgecnd5gv4vx7&st=jaez0gkb" target="_blank">View Code Review Video</a>
+    </main>
 </body>
 </html>
