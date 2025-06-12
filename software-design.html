@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Software Design Enhancement – CS 499</title>
   <style>
     :root {
@@ -18,14 +18,14 @@
 
     body {
       margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg);
+      background: var(--bg);
       color: var(--text);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     header {
       background-color: #1a1d22;
-      padding: 2rem 1rem;
+      padding: 2rem;
       text-align: center;
       border-bottom: 2px solid #2c2f36;
     }
@@ -37,7 +37,6 @@
 
     header p {
       margin-top: 0.5rem;
-      font-size: 1rem;
       color: var(--muted);
     }
 
@@ -53,49 +52,57 @@
       color: var(--text);
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
     }
 
     nav a:hover {
       color: var(--accent);
     }
 
-    main {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
+    .container {
+      display: flex;
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 2rem auto;
+      padding: 0 2rem;
     }
 
-    section {
+    .left, .right {
       background-color: var(--surface);
-      padding: 2rem;
-      margin-bottom: 2rem;
       border-radius: 12px;
+      padding: 2rem;
       box-shadow: 0 4px 15px var(--shadow);
       border: 1px solid #2a2d33;
     }
 
+    .left {
+      flex: 1.2;
+    }
+
+    .right {
+      flex: 1;
+    }
+
     h2 {
       color: var(--highlight);
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       margin-top: 0;
     }
 
     p {
       color: #ccc;
       font-size: 1rem;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     .download-button {
       display: inline-block;
-      margin-top: 1rem;
+      margin: 0.5rem 0.5rem 0 0;
       padding: 0.6rem 1.2rem;
       background: var(--accent);
       color: #000;
+      text-decoration: none;
       font-weight: bold;
       border-radius: 6px;
-      text-decoration: none;
       transition: background 0.3s ease;
     }
 
@@ -109,6 +116,12 @@
       padding: 1rem;
       color: var(--muted);
       font-size: 0.85rem;
+    }
+
+    .code-label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
     }
   </style>
 </head>
@@ -125,46 +138,36 @@
     <a href="databases.html">Databases</a>
   </nav>
 
-  <main>
-    <section>
-      <h2>Overview</h2>
-      <p>This enhancement improved the original Android Weight Tracking App by modernizing the UI, separating concerns, and refactoring component logic to better meet current software design standards.</p>
-    </section>
+  <div class="container">
+    <div class="left">
+      <section>
+        <h2>Overview</h2>
+        <p>This enhancement improved the original Android Weight Tracking App by modernizing the UI, separating concerns, and refactoring component logic to better meet current software design standards.</p>
+      </section>
 
-    <section>
-      <h2>Original Code</h2>
-      <a
-        href="https://www.dropbox.com/scl/fi/ef3h7azfi0j5yvfuuwqo8/OriginalCode.zip?rlkey=vxlncu394uvbljbnttic6ptin&st=jplu03rg&dl=0"
-        target="_blank"
-        class="download-button"
-      >View Original Code</a>
-    </section>
+      <section>
+        <h2>Code</h2>
+        <div class="code-label">Original Version</div>
+        <a class="download-button" href="https://www.dropbox.com/scl/fi/ef3h7azfi0j5yvfuuwqo8/OriginalCode.zip?rlkey=vxlncu394uvbljbnttic6ptin&st=jplu03rg&dl=0" target="_blank">View Original Code</a>
 
-    <section>
-      <h2>Enhanced Version</h2>
-      <a
-        href="https://www.dropbox.com/scl/fi/fnjoh1ey7d1t2vwmvv42k/Software-Design-Enhancement.zip?rlkey=fcds6mikhmvkxnmgk4r2917wn&st=ct1tfbhz&dl=0"
-        target="_blank"
-        class="download-button"
-      >View Enhanced Code</a>
-    </section>
+        <div class="code-label">Enhanced Version</div>
+        <a class="download-button" href="https://www.dropbox.com/scl/fi/fnjoh1ey7d1t2vwmvv42k/Software-Design-Enhancement.zip?rlkey=fcds6mikhmvkxnmgk4r2917wn&st=ct1tfbhz&dl=0" target="_blank">View Enhanced Code</a>
+      </section>
+    </div>
 
-    <section>
-      <h2>Narrative</h2>
-      <p>
-        The artifact that I chose to enhance was a weight-tracking Android mobile application that I had originally worked on in CS-360. This was made using Android Studio and uses a mix of Java and XML files. The purpose of making this application originally was that I was big into working out and eating healthier. This just seemed like a great app to work on out of the options given to us, so I went with it. I still enjoy trying to be healthy, so this app is still very enjoyable to work on. However, since this was my favorite application I have made in school so far, this gave me a great opportunity to work on something that is both fun and gives a lot of potential to show my growth since I started on this about a year and a half ago.
-      </p>
-      <p>
-        The main reason that I included this artifact for my first enhancement is because it is very diverse with how many tools and imports I am using within it, as well as mobile applications being a career route that I am considering going down. I really enjoyed creating this originally, and backtracking everything and starting from scratch really showed me how much I have improved in my college career. As I mentioned, there are a lot of software development improvements in this new mobile application. I improved the front end overall with a much more polished UI, more pop-up menus or dialogs for cleanliness, dynamic options like timestamps, better SMS handling, more modular code, and overall, a better look to the application. The difference between this UI/UX and my old project is quite substantial. The code is also of a higher standard, improving all areas of application.
-      </p>
-      <p>
-        I did almost meet all the outcomes that I planned to meet for this objective. The only one that I did not do is setting a personalized icon for the app on the Android home screen. I have been having some struggles with this. Besides that, I went through all the code and rearranged, changed, added or deleted certain classes or XML files with better practice than before. All the classes and files are very simple to understand now with the purpose, where things are inside, as well as better groupings for locations or action controls of the files. Many files were deleted and then repurposed during this. Now, the classes handle the main login screen, dashboard screen, notes screen and DBHelper (untouched). The XML files in the drawable files handle all icon and text configurations, images, and anything else related to customization. The layout XML files handle the location, colors, and look of everything on each screen. These files are then pulled together by the classes and AndroidManifest.xml to pull everything together. As of now, there are no updates to the outcome-coverage plan.
-      </p>
-      <p>
-        When enhancing this artifact, I found that it is much easier than I figured it would be. The software design/engineering enhancements are usually the worst, but I enjoyed revamping this application. I have learned a lot since CS-360, particularly in code management and practices, and this helped me a lot in successfully meeting my goals for this enhancement. However, this is still the only project that I have had with mobile applications, so I still learned quite a bit about how the XML files can be customized and overall improvements in mobile development. The biggest challenge that I faced was getting the backgrounds for the buttons to look good. This often came with incorrect button layouts and scaling, as well as properly getting the buttons to do the function they are supposed to with the click functions. Overall, this was still very enjoyable though, and it brought me a lot more knowledge on something that I was rusty with.
-      </p>
-    </section>
-  </main>
+    <div class="right">
+      <section>
+        <h2>Narrative</h2>
+        <p>The artifact that I chose to enhance was a weight-tracking Android mobile application that I had originally worked on in CS-360. This was made using Android Studio and uses a mix of Java and XML files. The purpose of making this application originally was that I was big into working out and eating healthier. This just seemed like a great app to work on out of the options given to us, so I went with it. I still enjoy trying to be healthy, so this app is still very enjoyable to work on. However, since this was my favorite application I have made in school so far, this gave me a great opportunity to work on something that is both fun and gives a lot of potential to show my growth since I started on this about a year and a half ago.</p>
+
+        <p>The main reason that I included this artifact for my first enhancement is because it is very diverse with how many tools and imports I am using within it, as well as mobile applications being a career route that I am considering going down. I really enjoyed creating this originally, and backtracking everything and starting from scratch really showed me how much I have improved in my college career. As I mentioned, there are a lot of software development improvements in this new mobile application. I improved the front end overall with a much more polished UI, more pop-up menus or dialogs for cleanliness, dynamic options like timestamps, better SMS handling, more modular code, and overall, a better look to the application. The difference between this UI/UX and my old project is quite substantial. The code is also of a higher standard, improving all areas of application.</p>
+
+        <p>I did almost meet all the outcomes that I planned to meet for this objective. The only one that I did not do is setting a personalized icon for the app on the Android home screen. I have been having some struggles with this. Besides that, I went through all the code and rearranged, changed, added or deleted certain classes or XML files with better practice than before. All the classes and files are very simple to understand now with the purpose, where things are inside, as well as better groupings for locations or action controls of the files. Many files were deleted and then repurposed during this. Now, the classes handle the main login screen, dashboard screen, notes screen and DBHelper (untouched). The XML files in the drawable files handle all icon and text configurations, images, and anything else related to customization. The layout XML files handle the location, colors, and look of everything on each screen. These files are then pulled together by the classes and AndroidManifest.xml to pull everything together. As of now, there are no updates to the outcome-coverage plan.</p>
+
+        <p>When enhancing this artifact, I found that it is much easier than I figured it would be. The software design/engineering enhancements are usually the worst, but I enjoyed revamping this application. I have learned a lot since CS-360, particularly in code management and practices, and this helped me a lot in successfully meeting my goals for this enhancement. However, this is still the only project that I have had with mobile applications, so I still learned quite a bit about how the XML files can be customized and overall improvements in mobile development. The biggest challenge that I faced was getting the backgrounds for the buttons to look good. This often came with incorrect button layouts and scaling, as well as properly getting the buttons to do the function they are supposed to with the click functions. Overall, this was still very enjoyable though, and it brought me a lot more knowledge on something that I was rusty with.</p>
+      </section>
+    </div>
+  </div>
 
   <footer>
     © 2025 Garret Blake. All rights reserved.
