@@ -21,7 +21,7 @@
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
     canvas {
@@ -72,33 +72,36 @@
     }
 
     main {
-      max-width: 1300px;
-      margin: 2rem auto;
-      padding: 0 1rem;
       display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .left-column {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
       gap: 2rem;
     }
 
-    .left-panel, .right-panel {
+    .right-column {
+      width: 75%;
       background-color: var(--surface);
       padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 4px 15px var(--shadow);
+      box-shadow: 0 8px 20px var(--shadow);
       border: 1px solid #2a2d33;
     }
 
-    .left-panel {
-      flex: 1;
-      max-width: 350px;
-    }
-
-    .right-panel {
-      flex: 3;
-      font-size: 0.88rem;
-      line-height: 1.5;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+    .card {
+      background-color: var(--surface);
+      padding: 1.8rem;
+      border-radius: 12px;
+      border: 1px solid #2a2d33;
+      box-shadow: 0 8px 20px var(--shadow);
     }
 
     h2 {
@@ -107,14 +110,17 @@
       margin-top: 0;
     }
 
-    p {
+    .narrative-text {
       color: #ccc;
-      margin: 0 0 1rem;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      column-count: 2;
+      column-gap: 2rem;
     }
 
     .download-button {
       display: inline-block;
-      margin-top: 0.75rem;
+      margin-top: 1rem;
       padding: 0.6rem 1.2rem;
       background: var(--accent);
       color: #000;
@@ -130,7 +136,7 @@
 
     footer {
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 4rem;
       padding: 1rem;
       color: var(--muted);
       font-size: 0.85rem;
@@ -139,80 +145,40 @@
 </head>
 <body>
   <canvas id="particles"></canvas>
-
   <header>
     <h1>Software Design Enhancement</h1>
     <p>CS 499 Capstone</p>
   </header>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="initial-code-review.html">Code Review</a>
     <a href="data-structure-and-algorithm.html">Algorithms</a>
     <a href="databases.html">Databases</a>
   </nav>
-
   <main>
-    <div class="left-panel">
-      <h2>Overview</h2>
-      <p>This enhancement improved the original Android Weight Tracking App by modernizing the UI, separating concerns, and refactoring component logic to better meet current software design standards.</p>
-      <h2>Code</h2>
-      <a class="download-button" href="https://www.dropbox.com/scl/fi/ef3h7azfi0j5yvfuuwqo8/OriginalCode.zip?rlkey=vxlncu394uvbljbnttic6ptin&st=jplu03rg&dl=0" target="_blank">View Original Code</a><br>
-      <a class="download-button" href="https://www.dropbox.com/scl/fi/fnjoh1ey7d1t2vwmvv42k/Software-Design-Enhancement.zip?rlkey=fcds6mikhmvkxnmgk4r2917wn&st=ct1tfbhz&dl=0" target="_blank">View Enhanced Code</a>
+    <div class="left-column">
+      <div class="card">
+        <h2>Overview</h2>
+        <p>This enhancement improved the original Android Weight Tracking App by modernizing the UI, separating concerns, and refactoring component logic to better meet current software design standards.</p>
+      </div>
+      <div class="card">
+        <h2>Code</h2>
+        <a class="download-button" href="https://www.dropbox.com/scl/fi/ef3h7azfi0j5yvfuuwqo8/OriginalCode.zip?rlkey=vxlncu394uvbljbnttic6ptin&st=jplu03rg&dl=0" target="_blank">View Original Code</a>
+        <a class="download-button" href="https://www.dropbox.com/scl/fi/fnjoh1ey7d1t2vwmvv42k/Software-Design-Enhancement.zip?rlkey=fcds6mikhmvkxnmgk4r2917wn&st=ct1tfbhz&dl=0" target="_blank">View Enhanced Code</a>
+      </div>
     </div>
-
-    <div class="right-panel">
+    <div class="right-column">
       <h2>Narrative</h2>
-      <p>The artifact that I chose to enhance was a weight-tracking Android mobile application that I had originally worked on in CS-360. This was made using Android Studio and uses a mix of Java and XML files. The purpose of making this application originally was that I was big into working out and eating healthier. This just seemed like a great app to work on out of the options given to us, so I went with it. I still enjoy trying to be healthy, so this app is still very enjoyable to work on. However, since this was my favorite application I have made in school so far, this gave me a great opportunity to work on something that is both fun and gives a lot of potential to show my growth since I started on this about a year and a half ago.</p>
-      <p>The main reason that I included this artifact for my first enhancement is because it is very diverse with how many tools and imports I am using within it, as well as mobile applications being a career route that I am considering going down. I really enjoyed creating this originally, and backtracking everything and starting from scratch really showed me how much I have improved in my college career. As I mentioned, there are a lot of software development improvements in this new mobile application. I improved the front end overall with a much more polished UI, more pop-up menus or dialogs for cleanliness, dynamic options like timestamps, better SMS handling, more modular code, and overall, a better look to the application.</p>
-      <p>The difference between this UI/UX and my old project is quite substantial. The code is also of a higher standard, improving all areas of application. I did almost meet all the outcomes that I planned to meet for this objective. The only one that I did not do is setting a personalized icon for the app on the Android home screen. I have been having some struggles with this. Besides that, I went through all the code and rearranged, changed, added or deleted certain classes or XML files with better practice than before. All the classes and files are very simple to understand now with the purpose, where things are inside, as well as better groupings for locations or action controls of the files.</p>
-      <p>Many files were deleted and then repurposed during this. Now, the classes handle the main login screen, dashboard screen, notes screen and DBHelper (untouched). The XML files in the drawable files handle all icon and text configurations, images, and anything else related to customization. The layout XML files handle the location, colors, and look of everything on each screen. These files are then pulled together by the classes and AndroidManifest.xml to pull everything together. As of now, there are no updates to the outcome-coverage plan. When enhancing this artifact, I found that it is much easier than I figured it would be. The software design/engineering enhancements are usually the worst, but I enjoyed revamping this application. I have learned a lot since CS-360, particularly in code management and practices, and this helped me a lot in successfully meeting my goals for this enhancement. However, this is still the only project that I have had with mobile applications, so I still learned quite a bit about how the XML files can be customized and overall improvements in mobile development. The biggest challenge that I faced was getting the backgrounds for the buttons to look good. This often came with incorrect button layouts and scaling, as well as properly getting the buttons to do the function they are supposed to with the click functions. Overall, this was still very enjoyable though, and it brought me a lot more knowledge on something that I was rusty with.</p>
+      <div class="narrative-text">
+        <p>The artifact that I chose to enhance was a weight-tracking Android mobile application that I had originally worked on in CS-360. This was made using Android Studio and uses a mix of Java and XML files. The purpose of making this application originally was that I was big into working out and eating healthier. This just seemed like a great app to work on out of the options given to us, so I went with it. I still enjoy trying to be healthy, so this app is still very enjoyable to work on. However, since this was my favorite application I have made in school so far, this gave me a great opportunity to work on something that is both fun and gives a lot of potential to show my growth since I started on this about a year and a half ago.</p>
+        <p>The main reason that I included this artifact for my first enhancement is because it is very diverse with how many tools and imports I am using within it, as well as mobile applications being a career route that I am considering going down. I really enjoyed creating this originally, and backtracking everything and starting from scratch really showed me how much I have improved in my college career. As I mentioned, there are a lot of software development improvements in this new mobile application. I improved the front end overall with a much more polished UI, more pop-up menus or dialogs for cleanliness, dynamic options like timestamps, better SMS handling, more modular code, and overall, a better look to the application.</p>
+        <p>The difference between this UI/UX and my old project is quite substantial. The code is also of a higher standard, improving all areas of application. I did almost meet all the outcomes that I planned to meet for this objective. The only one that I did not do is setting a personalized icon for the app on the Android home screen. I have been having some struggles with this. Besides that, I went through all the code and rearranged, changed, added or deleted certain classes or XML files with better practice than before. All the classes and files are very simple to understand now with the purpose, where things are inside, as well as better groupings for locations or action controls of the files.</p>
+        <p>Many files were deleted and then repurposed during this. Now, the classes handle the main login screen, dashboard screen, notes screen and DBHelper (untouched). The XML files in the drawable files handle all icon and text configurations, images, and anything else related to customization. The layout XML files handle the location, colors, and look of everything on each screen. These files are then pulled together by the classes and AndroidManifest.xml to pull everything together. As of now, there are no updates to the outcome-coverage plan.</p>
+      </div>
     </div>
   </main>
-
   <footer>
     © 2025 Garret Blake. All rights reserved.
   </footer>
-
-  <script>
-    const canvas = document.getElementById("particles");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles = Array.from({ length: 80 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 2 + 1,
-      dx: Math.random() * 0.5 - 0.25,
-      dy: Math.random() * 0.5 - 0.25
-    }));
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#38bdf8";
-
-      particles.forEach(p => {
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
 </body>
 </html>
