@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Software Design Enhancement – CS 499</title>
   <style>
     :root {
@@ -16,12 +16,16 @@
       --shadow: rgba(0, 0, 0, 0.4);
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     canvas {
@@ -35,20 +39,20 @@
 
     header {
       background-color: #1a1d22;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 1rem;
       text-align: center;
       border-bottom: 2px solid #2c2f36;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.6rem;
+      font-size: 2.4rem;
       font-weight: 700;
     }
 
     header p {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
+      margin-top: 0.4rem;
+      font-size: 1rem;
       color: var(--muted);
     }
 
@@ -72,28 +76,12 @@
     }
 
     main {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
       gap: 2rem;
-      padding: 2rem;
-      max-width: 1400px;
-      margin: auto;
-    }
-
-    .left-column {
-      width: 25%;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .right-column {
-      width: 75%;
-      background-color: var(--surface);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px var(--shadow);
-      border: 1px solid #2a2d33;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
     .card {
@@ -101,7 +89,7 @@
       padding: 1.8rem;
       border-radius: 12px;
       border: 1px solid #2a2d33;
-      box-shadow: 0 8px 20px var(--shadow);
+      box-shadow: 0 4px 15px var(--shadow);
     }
 
     h2 {
@@ -110,17 +98,16 @@
       margin-top: 0;
     }
 
-    .narrative-text {
+    p {
       color: #ccc;
-      font-size: 0.8rem;
-      line-height: 1.4;
-      column-count: 2;
-      column-gap: 2rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
     }
 
     .download-button {
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
       padding: 0.6rem 1.2rem;
       background: var(--accent);
       color: #000;
@@ -134,9 +121,15 @@
       background: var(--hover);
     }
 
+    .narrative-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
     footer {
       text-align: center;
-      margin-top: 4rem;
+      margin: 4rem 0 2rem;
       padding: 1rem;
       color: var(--muted);
       font-size: 0.85rem;
@@ -144,41 +137,91 @@
   </style>
 </head>
 <body>
-  <canvas id="particles"></canvas>
-  <header>
-    <h1>Software Design Enhancement</h1>
-    <p>CS 499 Capstone</p>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="initial-code-review.html">Code Review</a>
-    <a href="data-structure-and-algorithm.html">Algorithms</a>
-    <a href="databases.html">Databases</a>
-  </nav>
-  <main>
-    <div class="left-column">
-      <div class="card">
-        <h2>Overview</h2>
-        <p>This enhancement improved the original Android Weight Tracking App by modernizing the UI, separating concerns, and refactoring component logic to better meet current software design standards.</p>
-      </div>
-      <div class="card">
-        <h2>Code</h2>
-        <a class="download-button" href="https://www.dropbox.com/scl/fi/ef3h7azfi0j5yvfuuwqo8/OriginalCode.zip?rlkey=vxlncu394uvbljbnttic6ptin&st=jplu03rg&dl=0" target="_blank">View Original Code</a>
-        <a class="download-button" href="https://www.dropbox.com/scl/fi/fnjoh1ey7d1t2vwmvv42k/Software-Design-Enhancement.zip?rlkey=fcds6mikhmvkxnmgk4r2917wn&st=ct1tfbhz&dl=0" target="_blank">View Enhanced Code</a>
-      </div>
+<canvas id="particles"></canvas>
+
+<header>
+  <h1>Software Design Enhancement</h1>
+  <p>CS 499 Capstone</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="initial-code-review.html">Code Review</a>
+  <a href="data-structure-and-algorithm.html">Algorithms</a>
+  <a href="databases.html">Databases</a>
+</nav>
+
+<main>
+  <div>
+    <div class="card">
+      <h2>Overview</h2>
+      <p>This enhancement improved the original Android Weight Tracking App by modernizing the UI, separating concerns, and refactoring component logic to better meet current software design standards.</p>
     </div>
-    <div class="right-column">
-      <h2>Narrative</h2>
-      <div class="narrative-text">
+
+    <div class="card">
+      <h2>Code</h2>
+      <a href="https://www.dropbox.com/scl/fi/ef3h7azfi0j5yvfuuwqo8/OriginalCode.zip?rlkey=vxlncu394uvbljbnttic6ptin&dl=0" target="_blank" class="download-button">View Original Code</a><br><br>
+      <a href="https://www.dropbox.com/scl/fi/fnjoh1ey7d1t2vwmvv42k/Software-Design-Enhancement.zip?rlkey=fcds6mikhmvkxnmgk4r2917wn&dl=0" target="_blank" class="download-button">View Enhanced Code</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Narrative</h2>
+    <div class="narrative-container">
+      <div>
         <p>The artifact that I chose to enhance was a weight-tracking Android mobile application that I had originally worked on in CS-360. This was made using Android Studio and uses a mix of Java and XML files. The purpose of making this application originally was that I was big into working out and eating healthier. This just seemed like a great app to work on out of the options given to us, so I went with it. I still enjoy trying to be healthy, so this app is still very enjoyable to work on. However, since this was my favorite application I have made in school so far, this gave me a great opportunity to work on something that is both fun and gives a lot of potential to show my growth since I started on this about a year and a half ago.</p>
+
         <p>The main reason that I included this artifact for my first enhancement is because it is very diverse with how many tools and imports I am using within it, as well as mobile applications being a career route that I am considering going down. I really enjoyed creating this originally, and backtracking everything and starting from scratch really showed me how much I have improved in my college career. As I mentioned, there are a lot of software development improvements in this new mobile application. I improved the front end overall with a much more polished UI, more pop-up menus or dialogs for cleanliness, dynamic options like timestamps, better SMS handling, more modular code, and overall, a better look to the application.</p>
+      </div>
+
+      <div>
         <p>The difference between this UI/UX and my old project is quite substantial. The code is also of a higher standard, improving all areas of application. I did almost meet all the outcomes that I planned to meet for this objective. The only one that I did not do is setting a personalized icon for the app on the Android home screen. I have been having some struggles with this. Besides that, I went through all the code and rearranged, changed, added or deleted certain classes or XML files with better practice than before. All the classes and files are very simple to understand now with the purpose, where things are inside, as well as better groupings for locations or action controls of the files.</p>
+
         <p>Many files were deleted and then repurposed during this. Now, the classes handle the main login screen, dashboard screen, notes screen and DBHelper (untouched). The XML files in the drawable files handle all icon and text configurations, images, and anything else related to customization. The layout XML files handle the location, colors, and look of everything on each screen. These files are then pulled together by the classes and AndroidManifest.xml to pull everything together. As of now, there are no updates to the outcome-coverage plan.</p>
       </div>
     </div>
-  </main>
-  <footer>
-    © 2025 Garret Blake. All rights reserved.
-  </footer>
+  </div>
+</main>
+
+<footer>
+  © 2025 Garret Blake. All rights reserved.
+</footer>
+
+<script>
+  const canvas = document.getElementById("particles");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const particles = Array.from({ length: 80 }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2 + 1,
+    dx: Math.random() * 0.5 - 0.25,
+    dy: Math.random() * 0.5 - 0.25
+  }));
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#38bdf8";
+    particles.forEach(p => {
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
 </body>
 </html>
