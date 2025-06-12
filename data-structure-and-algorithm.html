@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algorithms & Data Structures – CS 499</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --surface: #1c1f26;
+      --text: #f0f0f0;
+      --muted: #aaa;
+      --highlight: #61dafb;
+      --accent: #38bdf8;
+      --hover: #0ea5e9;
+      --shadow: rgba(0, 0, 0, 0.4);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background-color: #1a1d22;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 2px solid #2c2f36;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: #2a2d33;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      background-color: var(--surface);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px var(--shadow);
+      border: 1px solid #2a2d33;
+    }
+
+    h2 {
+      color: var(--highlight);
+      font-size: 1.6rem;
+      margin-top: 0;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .download-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: var(--accent);
+      color: #000;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .download-button:hover {
+      background: var(--hover);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Algorithms & Data Structures Enhancement</h1>
+    <p>CS 499 Capstone</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="initial-code-review.html">Code Review</a>
+    <a href="software-design.html">Software Design</a>
+    <a href="data-structure-and-algorithm.html">Algorithms</a>
+    <a href="databases.html">Databases</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Overview</h2>
+      <p>
+        This enhancement focused on improving performance, iteration flow, and data presentation in the Android weight-tracking app. By refactoring loops, improving how user logs are stored and retrieved, and building a modular charting system, the app now uses stronger logic and structured data handling principles.
+      </p>
+    </section>
+
+    <section>
+      <h2>Original Code</h2>
+      <a
+        href="https://www.dropbox.com/scl/fi/ef3h7azfi0j5yvfuuwqo8/OriginalCode.zip?rlkey=vxlncu394uvbljbnttic6ptin&st=npwqkoq8&dl=0"
+        target="_blank"
+        class="download-button"
+      >View Original Code</a>
+    </section>
+
+    <section>
+      <h2>Enhanced Version</h2>
+      <a
+        href="https://www.dropbox.com/scl/fi/p3n9kcd7je90nzsyzkdef/Algorithms-and-Data-Structures.zip?rlkey=utdrbrfop1taumnp9jm2olkd9&st=hfdh7bh2&dl=0"
+        target="_blank"
+        class="download-button"
+      >View Enhanced Code</a>
+    </section>
+
+    <section>
+      <h2>Narrative</h2>
+      <p>
+        This artifact is a further continuation of the same artifact that I used previously for Milestone 2, the Android weight-tracking application. I originally created this application in CS-360 about a year and a half ago. I improved the software engineering and design aspects for this same artifact in Milestone 2. This app is used to record the weight and calorie logs for a user over time, while emphasizing short-term success by rewarding stars for hitting little milestones. However, using SQLite, a user can see their data over a long period of time in a variety of ways.
+      </p>
+      <p>
+        This artifact shows real-world potential, as it is a very detailed recording of weight loss. By encouraging users to focus on short-term success, they will feel more encouraged to continue. This also encourages more frequent logging, which provides rich insights into body fluctuations. I selected this artifact for both the software design enhancement and the algorithms and data structure enhancement. For this, I added new data aggregations, iterations, lists, and visual charts.
+      </p>
+      <p>
+        The highlight of this enhancement is the new charting system, which can reflect a user’s data over daily, weekly, or monthly views. Users can toggle between line and bar graphs and explore entries from 2020–2026. In daily mode, every log entry is shown. In weekly and monthly modes, averages are calculated per weekday or per month. Additionally, the app now features dynamic goal weight adjustments, real-time star updates, and targeted data filtering for selected days.
+      </p>
+      <p>
+        I did meet my intended outcomes from Module One. The charting system satisfies the need for accurate, reliable, and meaningful data handling that helps users track weight fluctuations with clarity. Charts can even be reviewed across years to reveal long-term health patterns. If anything, I would continue improving data scalability and chart features as the app grows. While the next milestone will focus on the database layer, data reliability and structured access remain foundational.
+      </p>
+      <p>
+        The biggest thing I learned while enhancing this artifact is how quickly performance can be impacted by poorly optimized logic. Without efficient iteration, caching, and modular design, the app began to slow. Keeping everything clean and well-structured helped a lot—especially when linking XML and Java files. I’ve gained a much deeper appreciation for logic reuse, data grouping, and processing loops—concepts I know will benefit future projects.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Garret Blake. All rights reserved.
+  </footer>
+</body>
+</html>
