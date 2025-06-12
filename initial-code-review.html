@@ -52,58 +52,71 @@
       color: var(--muted);
     }
 
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background-color: #2a2d33;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
     main {
-      max-width: 1100px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
     .card {
+      flex: 1 1 480px;
       background-color: var(--surface);
-      padding: 1.8rem;
+      padding: 2rem;
       border-radius: 12px;
       border: 1px solid #2a2d33;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
       box-shadow: 0 8px 20px var(--shadow);
     }
 
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.4rem;
+    h2 {
       color: var(--highlight);
+      font-size: 1.6rem;
+      margin-top: 0;
     }
 
-    .card p {
+    p {
       color: #ccc;
       font-size: 0.95rem;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
-    .card a {
+    .download-button {
       display: inline-block;
       margin-top: 1rem;
       padding: 0.6rem 1.2rem;
-      background-color: var(--accent);
+      background: var(--accent);
       color: #000;
-      text-decoration: none;
-      border-radius: 6px;
       font-weight: bold;
-      transition: background-color 0.3s ease;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
     }
 
-    .card a:hover {
-      background-color: var(--hover);
+    .download-button:hover {
+      background: var(--hover);
     }
 
     footer {
@@ -131,7 +144,7 @@
   </nav>
 
   <main>
-    <section>
+    <section class="card">
       <h2>Video Walkthrough</h2>
       <p>This video presents an overview of the original artifact prior to any enhancements. It discusses the app’s initial structure, identifies opportunities for improvement, and outlines the planned modifications for each of the three core areas.</p>
       <a
@@ -141,6 +154,11 @@
       >
         Watch Code Review Video
       </a>
+    </section>
+
+    <section class="card">
+      <h2>Project Summary</h2>
+      <p>The initial version of this project was developed in Android Studio using Java and XML. It tracks user weight and calorie data while promoting consistent progress through visual feedback mechanisms. During the code review, the structure, readability, and efficiency of the original codebase were analyzed to plan enhancements that aligned with best practices in software engineering, data structure, and database design.</p>
     </section>
   </main>
 
