@@ -26,6 +26,17 @@
     .narrative-block {
       margin-bottom: 1.5rem;
     }
+
+    canvas#particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+
     
     header {
       background-color: #1a1d22;
@@ -142,8 +153,8 @@
     }
   </style>
 </head>
-<canvas id="particles"></canvas>
 <body> 
+  <canvas id="particles"></canvas>
   <header>
     <h1>Database Enhancement</h1>
     <p>CS 499 Capstone</p>
