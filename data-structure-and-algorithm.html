@@ -98,16 +98,17 @@
       margin-top: 0;
     }
 
-    .narrative h3 {
+    h3 {
       font-size: 1rem;
-      color: var(--text);
-      margin-top: 0;
+      color: #f0f0f0;
+      margin-top: 0.5rem;
     }
 
-    .narrative p {
-      font-size: 0.68rem;
-      line-height: 1.6;
+    p {
       color: #ccc;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
     }
 
     .download-button {
@@ -134,8 +135,8 @@
 
     footer {
       text-align: center;
-      margin: 1rem 0 2rem;
-      padding: 1rem;
+      margin: 2rem 0;
+      padding: 0.5rem;
       color: var(--muted);
       font-size: 0.85rem;
     }
@@ -175,27 +176,19 @@
     <h2>Narrative</h2>
     <div class="narrative-container">
       <div>
-        <div class="narrative-block">
-          <h3>1. Artifact Description</h3>
-          <p>This artifact is a further continuation of the same artifact that I used previously for Milestone 2, the Android weight-tracking application. I originally created this application in CS-360 about a year and a half ago. I improved the software engineering and design aspects for this same artifact in Milestone 2. This app is used to record the weight and calorie logs for a user over time, while emphasizing short-term success by rewarding stars for hitting little milestones. However, using SQLite, a user can see their data over a long period of time in a variety of ways.</p>
-        </div>
+        <h3>1. Artifact Description</h3>
+        <p>This artifact is a further continuation of the same artifact that I used previously for Milestone 2, the Android weight-tracking application. I originally created this application in CS-360 about a year and a half ago. I improved the software engineering and design aspects for this same artifact in Milestone 2. This app is used to record the weight and calorie logs for a user over time, while emphasizing short-term success by rewarding stars for hitting little milestones. However, using SQLite, a user can see their data over a long period of time in a variety of ways.</p>
 
-        <div class="narrative-block">
-          <h3>2. Justification & Enhancements</h3>
-          <p>This artifact shows real-world potential, as it is a very detailed recording of weight loss. By encouraging users to focus on short-term success, they will feel more encouraged to continue. This also encourages more frequent logging, which provides rich insights into body fluctuations. I selected this artifact for both the software design enhancement and the algorithms and data structure enhancement. For this, I added new data aggregations, iterations, lists, and visual charts.</p>
-        </div>
+        <h3>2. Justification & Enhancements</h3>
+        <p>This artifact shows real-world potential, as it is a very detailed recording of weight loss. By encouraging users to focus on short-term success, they will feel more encouraged to continue. This also encourages more frequent logging, which provides rich insights into body fluctuations. I selected this artifact for both the software design enhancement and the algorithms and data structure enhancement. For this, I added new data aggregations, iterations, lists, and visual charts.</p>
       </div>
 
       <div>
-        <div class="narrative-block">
-          <h3>3. Course Outcomes</h3>
-          <p>The highlight of this enhancement is the new charting system, which can reflect a user’s data over daily, weekly, or monthly views. Users can toggle between line and bar graphs and explore entries from 2020–2026. In daily mode, every log entry is shown. In weekly and monthly modes, averages are calculated per weekday or per month. Additionally, the app now features dynamic goal weight adjustments, real-time star updates, and targeted data filtering for selected days.</p>
-        </div>
+        <h3>3. Course Outcomes</h3>
+        <p>The highlight of this enhancement is the new charting system, which can reflect a user’s data over daily, weekly, or monthly views. Users can toggle between line and bar graphs and explore entries from 2020–2026. In daily mode, every log entry is shown. In weekly and monthly modes, averages are calculated per weekday or per month. Additionally, the app now features dynamic goal weight adjustments, real-time star updates, and targeted data filtering for selected days.</p>
 
-        <div class="narrative-block">
-          <h3>4. Reflection</h3>
-          <p>The biggest thing I learned while enhancing this artifact is how quickly performance can be impacted by poorly optimized logic. Without efficient iteration, caching, and modular design, the app began to slow. Keeping everything clean and well-structured helped a lot—especially when linking XML and Java files. I’ve gained a much deeper appreciation for logic reuse, data grouping, and processing loops—concepts I know will benefit future projects.</p>
-        </div>
+        <h3>4. Reflection</h3>
+        <p>The biggest thing I learned while enhancing this artifact is how quickly performance can be impacted by poorly optimized logic. Without efficient iteration, caching, and modular design, the app began to slow. Keeping everything clean and well-structured helped a lot—especially when linking XML and Java files. I’ve gained a much deeper appreciation for logic reuse, data grouping, and processing loops—concepts I know will benefit future projects.</p>
       </div>
     </div>
   </div>
@@ -222,15 +215,19 @@
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#38bdf8";
+
     particles.forEach(p => {
       p.x += p.dx;
       p.y += p.dy;
+
       if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
       if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fill();
     });
+
     requestAnimationFrame(animate);
   }
 
