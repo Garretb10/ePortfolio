@@ -6,7 +6,7 @@
   <title>Initial Code Review – CS 499</title>
   <style>
     :root {
-      --bg: #0f1115;
+      --bg: #0b0c10;
       --surface: #1c1f26;
       --text: #f0f0f0;
       --muted: #aaa;
@@ -21,103 +21,89 @@
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      position: relative;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
-    #particles {
+    canvas {
       position: fixed;
-      width: 100%;
-      height: 100%;
       top: 0;
       left: 0;
-      z-index: 0;
-      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
 
     header {
-      background-color: #1e293b;
-      color: white;
+      background-color: #1a1d22;
       padding: 2rem 1rem;
       text-align: center;
-      z-index: 1;
-      position: relative;
+      border-bottom: 2px solid #2c2f36;
     }
 
     header h1 {
-      font-size: 2.2rem;
       margin: 0;
+      font-size: 2.6rem;
+      font-weight: 700;
     }
 
     header p {
-      color: var(--muted);
       margin-top: 0.5rem;
-      font-size: 1rem;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background-color: #334155;
-      padding: 1rem 0;
-      z-index: 1;
-      position: relative;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--accent);
+      font-size: 1.1rem;
+      color: var(--muted);
     }
 
     main {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 2rem auto;
       padding: 0 1rem;
-      position: relative;
-      z-index: 1;
     }
 
-    section {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
       background-color: var(--surface);
-      padding: 2rem;
+      padding: 1.8rem;
       border-radius: 12px;
-      box-shadow: 0 4px 15px var(--shadow);
       border: 1px solid #2a2d33;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     }
 
-    h2 {
-      color: var(--highlight);
-      font-size: 1.6rem;
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px var(--shadow);
+    }
+
+    .card h2 {
       margin-top: 0;
+      font-size: 1.4rem;
+      color: var(--highlight);
     }
 
-    p {
+    .card p {
       color: #ccc;
-      font-size: 1rem;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      line-height: 1.4;
     }
 
-    .download-button {
+    .card a {
       display: inline-block;
       margin-top: 1rem;
       padding: 0.6rem 1.2rem;
-      background: var(--accent);
+      background-color: var(--accent);
       color: #000;
       text-decoration: none;
-      font-weight: bold;
       border-radius: 6px;
-      transition: background 0.3s ease;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
 
-    .download-button:hover {
-      background: var(--hover);
+    .card a:hover {
+      background-color: var(--hover);
     }
 
     footer {
@@ -126,8 +112,6 @@
       padding: 1rem;
       color: var(--muted);
       font-size: 0.85rem;
-      position: relative;
-      z-index: 1;
     }
   </style>
 </head>
