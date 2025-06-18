@@ -16,28 +16,31 @@
       --shadow: rgba(0, 0, 0, 0.4);
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg);
       color: var(--text);
+      overflow-x: hidden;
     }
 
     .narrative-block {
       margin-bottom: 1.5rem;
     }
 
-    canvas#particles {
+    canvas {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       z-index: -1;
-      pointer-events: none;
     }
 
-    
     header {
       background-color: transparent;
       padding: 2rem 1rem;
@@ -84,19 +87,12 @@
     }
 
     main {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
       gap: 2rem;
       max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;
-      align-items: stretch;
-    }
-
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      flex: 1;
     }
 
     .card {
@@ -111,22 +107,6 @@
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 0 10px rgba(56, 189, 248, 0.05), 0 0 30px rgba(56, 189, 248, 0.03);
-    }
-    
-    .narrative {
-      flex: 3;
-    }
-
-    .narrative-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .narrative-block h3 {
-      font-size: 0.9rem;
-      color: var(--text);
-      margin-bottom: 0.5rem;
     }
 
     h2 {
@@ -171,10 +151,16 @@
       background: var(--hover);
     }
 
+    .narrative-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
     footer {
       text-align: center;
       margin-top: 1rem;
-      padding: 1rem;
+      padding: 0.5rem;
       color: var(--muted);
       font-size: 0.85rem;
     }
