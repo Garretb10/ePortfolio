@@ -93,7 +93,6 @@
       max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;
-      align-items: start;
     }
 
     .card {
@@ -189,49 +188,49 @@
     <a href="data-structure-and-algorithm.html">Algorithms</a>
   </nav>
 
-<main>
-  <div>
-    <div class="card">
-      <h2>Overview</h2>
-      <p>This enhancement focused on strengthening the database logic and data reliability of the Android weight-tracking app. Key improvements included data validation, structured storage updates, and consistent formatting for chart-ready input.</p>
-    </div>
-
-    <div class="card">
-      <h2>Code</h2>
-      <a href="https://www.dropbox.com/scl/fi/ef3h7azfi0j5yvfuuwqo8/OriginalCode.zip?rlkey=vxlncu394uvbljbnttic6ptin&dl=0" target="_blank" class="download-button">View Original Code</a><br><br>
-      <a href="https://www.dropbox.com/scl/fi/d2v9kpvr9em95h7488g2h/Databases.zip?rlkey=voiibq8q0is4r9xlg4duo3dwu&dl=0" target="_blank" class="download-button">View Enhanced Code</a>
-    </div>
-  </div>
-
-  <div class="card narrative">
-    <h2>Narrative</h2>
-    <div class="narrative-container">
-      <div>
-        <div class="narrative-block">
-          <h3>1. Artifact Description</h3>
-          <p>The artifact that I selected for this enhancement is the same one as the past two enhancements, the Android weight-tracking application. I originally created this app about a year and a half ago, in my CS-360 mobile development class...</p>
-        </div>
-
-        <div class="narrative-block">
-          <h3>2. Justification & Enhancements</h3>
-          <p>This artifact reflects my ability to optimize and correctly enhance the backend database of a mobile app. Using SQLite originally, I already had a decent starting point with this...</p>
-        </div>
+  <main>
+    <div class="sidebar">
+      <div class="card">
+        <h2>Overview</h2>
+        <p>This enhancement focused on strengthening the database logic and data reliability of the Android weight-tracking app. Key improvements included data validation, structured storage updates, and consistent formatting for chart-ready input.</p>
       </div>
 
-      <div>
-        <div class="narrative-block">
-          <h3>3. Course Outcomes</h3>
-          <p>Yes, I was able to meet all the outcomes I planned on completing during this. I was able to develop a very secure and functional backend that handles the data within this app...</p>
+      <div class="card">
+        <h2>Code</h2>
+        <a href="https://www.dropbox.com/scl/fi/ef3h7azfi0j5yvfuuwqo8/OriginalCode.zip?rlkey=vxlncu394uvbljbnttic6ptin&dl=0" target="_blank" class="download-button">View Original Code</a><br><br>
+        <a href="https://www.dropbox.com/scl/fi/d2v9kpvr9em95h7488g2h/Databases.zip?rlkey=voiibq8q0is4r9xlg4duo3dwu&dl=0" target="_blank" class="download-button">View Enhanced Code</a>
+      </div>
+    </div>
+
+    <div class="card narrative">
+      <h2>Narrative</h2>
+      <div class="narrative-container">
+        <div>
+          <div class="narrative-block">
+            <h3>1. Artifact Description</h3>
+            <p>The artifact that I selected for this enhancement is the same one as the past two enhancements, the Android weight-tracking application. I originally created this app about a year and a half ago, in my CS-360 mobile development class. This app allows users to log daily weight and calorie entries, track these with a charting system, and earn milestones with a star tracking system.</p>
+          </div>
+
+          <div class="narrative-block">
+            <h3>2. Justification & Enhancements</h3>
+            <p>This artifact reflects my ability to optimize and correctly enhance the backend database of a mobile app. Using SQLite originally, I already had a decent starting point with this. It was able to store logs in SharedPreferences and had the ability to store stars. For this enhancement, I wanted to improve the scalability and reliability of this database. First, I ensured that data was correctly displayed across all sessions. A user now will always have correct data across however long they may use it. Next, I added dynamic timestamps to all logs, created structured strings, and added extra logic for things like parsing. Then, I added things like organizing the data to calculate averages to allow proper charting of data. Lastly, I added secure input validation that allows for no bad entries to be stored, erasing the need of most of the above additions. By adding this, we only allow the user to implement correctly formatted and aligned data.</p>
+          </div>
         </div>
 
-        <div class="narrative-block">
-          <h3>4. Reflection</h3>
-          <p>This enhancement helped me learn how to correctly update a backend. While doing this, I faced a couple issues like data loss, improper data structuring at times, and overall data challenges...</p>
+        <div>
+          <div class="narrative-block">
+            <h3>3. Course Outcomes</h3>
+            <p>Yes, I was able to meet all the outcomes I planned on completing during this. I was able to develop a very secure and functional backend that handles the data within this app. It validates all entered data, stores logs with dynamic timestamps for entries, and can do all of this with effectively no slowness to the front-end or crashing at all. The only update I could think of for the database enhancement would be eventually moving this to the cloud. I may do this in the future, and store backups with cloud copies of all the data. This would ensure there is never any data loss and users would feel more secure using this application.</p>
+          </div>
+
+          <div class="narrative-block">
+            <h3>4. Reflection</h3>
+            <p>This enhancement helped me learn how to correctly update a backend. While doing this, I faced a couple issues like data loss, improper data structuring at times, and overall data challenges. However, after I finished this, I realized how important small tweaks can be to a database. After this enhancement, the speed of the front-end is much quicker than before. There are no delays in data return in the charts or records, and the app overall runs much more smoothly. I also no longer have random data disappearing or being put in the wrong spot. All data is only found in the area or chart it is supposed to and is structured so that it is easily conveyed to the user, no matter their needs.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</main>
+  </main>
 
   <footer>
     © 2025 Garret Blake
