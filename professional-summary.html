@@ -7,56 +7,188 @@
   <style>
     :root {
       --bg: #0b0c10;
+      --surface: #1c1f26;
       --text: #f0f0f0;
+      --muted: #aaa;
+      --highlight: #61dafb;
       --accent: #38bdf8;
       --hover: #0ea5e9;
+      --shadow: rgba(0, 0, 0, 0.4);
     }
 
-    body {
+    html, body {
       margin: 0;
       background-color: var(--bg);
       color: var(--text);
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+
+    header {
+      background-color: transparent;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      color: var(--highlight);
+      text-shadow: 0 0 6px rgba(56, 189, 248, 0.7);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: rgba(28, 34, 44, 0.5);
+      padding: 1rem;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #2a2d33;
+    }
+
+    nav a {
+      color: #e0f7ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #8eeeff;
+      text-shadow: 0 0 8px #38bdf8;
+    }
+
+    main {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      padding: 4rem 1rem;
       text-align: center;
+      min-height: 60vh;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      color: var(--accent);
+    main h2 {
+      font-size: 2.2rem;
       margin-bottom: 1rem;
-      text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+      color: var(--accent);
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
     }
 
-    p {
+    main p {
       font-size: 1.1rem;
-      margin-bottom: 2rem;
       color: #ccc;
+      margin-bottom: 2rem;
     }
 
-    a.button {
-      padding: 0.7rem 1.5rem;
+    .button {
+      padding: 0.75rem 1.6rem;
       background-color: var(--accent);
       color: #000;
       text-decoration: none;
       font-weight: bold;
       border-radius: 8px;
+      font-size: 1rem;
       transition: background-color 0.3s ease;
     }
 
-    a.button:hover {
+    .button:hover {
       background-color: var(--hover);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
     }
   </style>
 </head>
 <body>
-  <h1>Professional Summary</h1>
-  <p>Coming Soon!</p>
-  <a href="index.html" class="button">Return to Menu</a>
+  <canvas id="particles"></canvas>
+
+  <header>
+    <h1>Professional Summary</h1>
+    <p>CS 499 Capstone</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="professional-summary.html">Professional Summary</a>
+    <a href="initial-code-review.html">Code Review</a>
+    <a href="software-design.html">Software Design</a>
+    <a href="data-structure-and-algorithm.html">Algorithms</a>
+    <a href="databases.html">Databases</a>
+  </nav>
+
+  <main>
+    <h2>Coming Soon</h2>
+    <p>This section is still under construction. Please check back later!</p>
+    <a class="button" href="index.html">Return to Menu</a>
+  </main>
+
+  <footer>
+    © 2025 Garret Blake
+  </footer>
+
+  <script>
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = Array.from({ length: 80 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 2 + 1,
+      dx: Math.random() * 0.5 - 0.25,
+      dy: Math.random() * 0.5 - 0.25
+    }));
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#38bdf8";
+      particles.forEach(p => {
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
 </html>
-
