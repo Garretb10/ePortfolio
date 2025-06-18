@@ -1,4 +1,4 @@
-# Garret Blake's ePortfolio
+# ePortfolio
 
 This is my final capstone project for the Computer Science program at SNHU. It showcases my growth, technical development, and understanding across key areas of software engineering through an interactive ePortfolio site.
 
