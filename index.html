@@ -158,17 +158,32 @@
     }
     
     @media (max-width: 768px) {
-      .card {
-        width: 100%;
-        max-width: 90vw;
+      header {
+        padding: 1.2rem 0.5rem;
+      }    
+      header h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+      }   
+      header p {
+        font-size: 0.95rem;
+      }    
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.8rem;
+      }  
+      nav a {
+        font-size: 0.95rem;
+        padding: 0.4rem;
       }
       .grid {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
-      .card a {
-        width: 100%;
-        text-align: center;
+      .card {
+        max-width: 90%;
+        padding: 1.4rem;
       }
     }
   </style>
