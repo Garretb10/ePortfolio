@@ -100,6 +100,14 @@
       box-shadow: 0 8px 20px var(--shadow);
     }
 
+    .centered-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
     .card h2 {
       margin-top: 0;
       margin: 0 0 0.5rem;
@@ -173,35 +181,36 @@
     <p>A showcase of my growth in the Computer Science program</p>
   </header>
 
-  
-  <main>
-    <div class="grid top-right">
+    <main>
+    <!-- Top row with 2 cards centered -->
+    <div class="centered-row">
       <div class="card">
         <h2>Professional Summary</h2>
         <p>A reflection of my accomplishments and progress in the Computer Science field.</p>
         <a href="professional-summary.html">View Summary</a>
       </div>
-
+  
       <div class="card">
         <h2>Initial Code Review</h2>
         <p>A walkthrough of the original project code and a review of areas for enhancement.</p>
         <a href="initial-code-review.html">View Code Review</a>
       </div>
     </div>
-
-    <div class="grid bottom-row">
+  
+    <!-- Bottom row with 3 cards in grid -->
+    <div class="grid">
       <div class="card">
         <h2>Software Design Enhancement</h2>
         <p>Enhancing UI structure, responsiveness, and feature logic to follow modern design standards.</p>
         <a href="software-design.html">View Enhancement</a>
       </div>
-
+  
       <div class="card">
         <h2>Algorithms & Data Structures Enhancement</h2>
         <p>Improvements in performance, logic, and structured implementation.</p>
         <a href="data-structure-and-algorithm.html">View Enhancement</a>
       </div>
-
+  
       <div class="card">
         <h2>Database Enhancement</h2>
         <p>Improved data validation, secure storage, and best practices in local data management.</p>
