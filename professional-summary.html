@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Professional Summary</title>
   <style>
     :root {
       --bg: #0b0c10;
-      --surface: #1c1f26;
+      --surface: rgba(28, 31, 38, 0.88);
       --text: #f0f0f0;
       --muted: #aaa;
       --highlight: #61dafb;
@@ -16,14 +16,14 @@
       --shadow: rgba(0, 0, 0, 0.4);
     }
 
-    body {
+    html, body {
       margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
       overflow-y: auto;
-      height: 100%;
+      min-height: 100vh;
     }
 
     canvas {
@@ -81,46 +81,25 @@
     }
 
     main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 1rem;
-      text-align: center;
-      min-height: 60vh;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--surface);
+      border-radius: 12px;
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.08);
     }
 
-    main h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-      text-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
-    }
-
-    main p {
-      font-size: 1.1rem;
-      color: #ccc;
-      margin-bottom: 2rem;
-    }
-
-    .button {
-      padding: 0.75rem 1.6rem;
-      background-color: var(--accent);
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-    }
-
-    .button:hover {
-      background-color: var(--hover);
+    p {
+      font-size: 0.95rem;
+      color: #ddd;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
     }
 
     footer {
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 4rem;
       padding: 1rem;
       color: var(--muted);
       font-size: 0.85rem;
@@ -129,7 +108,6 @@
 </head>
 <body>
   <canvas id="particles"></canvas>
-
   <header>
     <h1>Professional Summary</h1>
     <p>CS 499 Capstone</p>
@@ -137,14 +115,26 @@
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="initial-code-review.html">Code Review</a>
+    <a href="initial-code-review.html">Initial Code Review</a>
     <a href="software-design.html">Software Design</a>
     <a href="data-structure-and-algorithm.html">Algorithms</a>
     <a href="databases.html">Databases</a>
   </nav>
 
   <main>
-    <h2>Coming Soon!</h2>
+    <p>My name is Garret Blake, and I am currently completing my final semester in the Computer Science program at SNHU. Over the course of this curriculum, I have gained a lot of valuable knowledge related to technical skills, mindset improvement, collaboration and creative engineering. This course involved showcasing this by enhancing three different areas of projects that we have worked on previously in the program. This included Software Engineering and Design, Data Structures and Algorithms and Database enhancements. For this, I chose the same application for all three enhancements, a weight-tracking Android mobile application.</p>
+
+    <p>This capstone project demonstrates my ability to refine and improve pre-existing code. By doing so for code that I also created myself over a year ago, this represents my improvements and knowledge gained within the programming realm. What was once a very simple weight-tracking application that did not handle logic or data much at all, is now a fully functional application that handles, sorts and visualizes the data well for a user. Each enhancement added a unique step to creating a fully functional and professional application. Things like modularity, scalability and industry-standard practices were also kept in mind when revising this application.</p>
+
+    <p>In the first enhancement, for software engineering and design, I focused on improving the overall structure, responsiveness, and clarity of the weight-tracking app. I restructured the layout using modular components and refined the XMLs to support a modern UI feel. These changes not only enhanced the user experience but also made future additions and updates much easier to implement. I also added a star reward system for reaching goals and streamlined the navigation and UX to make the app more streamlined for users.</p>
+
+    <p>For the second enhancement, with data structures and algorithms, I optimized several areas of the code responsible for data processing and visualization. I improved inefficient loops, data logic, and introduced a charting system that displays user data across daily, weekly, and monthly charts. This included implementing averaging calculations, toggleable graph types, and filtering or sorting features. This all made the app way more responsive and engaging. These changes reflect my ability to write clean and efficient logic that scales well for future updates.</p>
+
+    <p>In the third enhancement, focused on databases, I reinforced the app’s data integrity by revisiting and improving the local storage using SQLite. I added input validation, structured timestamped logs, and ensured data persistence across sessions. I also restructured how the app stores and retrieves a user’s input to prevent data loss or incorrect entries, allowing the app to scale over time for the charting system and data. This enhancement demonstrated my ability to work with backend systems and use industry-standard practices for data management within mobile applications.</p>
+
+    <p>Besides the technical improvements demonstrated in these enhancements, I also have improved in soft skill areas like communication and time management. As I further my career in this field, I continue to learn new terminology and adapt to a professional environment with a deeper understanding of technical communications. This has helped me in many areas such as communicating with other students, helping me describe an issue more in-depth at my internship, or in general just fully understanding what technical professionals are saying to me. With time management, this improves daily with the higher and increased work that I am doing now in this field. I gather new insights very often about how to tackle an issue better or how to properly structure my workload daily. These soft skills are almost as important to me as any other area, as these are what truly excel people in the field.</p>
+
+    <p>Overall, this program has helped me gain the knowledge and confidence that I need to do well in the technical field. It has prepped me in a variety of different ways for the real world. First, I now have a foundational technical understanding that continues to improve daily. Applications and websites that I thought would be impossible for me to make a couple of years ago, are now obtainable in a decently short time. My background in technical scope is now dramatically enhanced from this program, and I now have the tools needed to excel in the Computer Science fields. This ePortfolio demonstrates both my knowledge and skills gained throughout this program, but also my entry into the software engineering career as a profession.</p>
   </main>
 
   <footer>
