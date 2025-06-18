@@ -97,42 +97,44 @@
       margin-bottom: 1.5rem;
     }
 
+    .summary-grid {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      padding: 0 1rem;
+    }
+    
     .summary-card {
       background-color: rgba(28, 31, 38, 0.88);
       padding: 2rem;
-      margin-top: 2rem;
       border-radius: 14px;
+      max-width: 500px;
+      flex: 1 1 400px;
       border: 1px solid rgba(56, 189, 248, 0.15);
-      box-shadow: 0 0 10px rgba(56, 189, 248, 0.05);
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.05);
       transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
     
     .summary-card:hover {
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
       transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
     }
     
     .summary-header {
       margin-top: 0;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: var(--highlight);
       text-shadow: 0 0 6px rgba(56, 189, 248, 0.7);
-      transition: text-shadow 0.3s ease, color 0.3s ease;
-    }
-    
-    .summary-card:hover .summary-header {
-      color: #8eeeff;
-      text-shadow: 0 0 12px rgba(56, 189, 248, 1);
+      margin-bottom: 1rem;
     }
     
     .summary-card p {
       font-size: 0.95rem;
-      line-height: 1.6;
       color: #e0e0e0;
-      margin-bottom: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 1.1rem;
     }
 
     footer {
@@ -160,22 +162,27 @@
   </nav>
 
 <main>
-  <section class="card summary-card">
+  <div class="summary-grid">
+    <section class="summary-card">
     <h2 class="summary-header">Professional Summary</h2>
     <p>Hello, my name is Garret Blake, and I am currently completing my final semester in the Computer Science program at SNHU. Over the course of this curriculum, I have gained valuable knowledge related to technical skills, mindset improvement, collaboration, and creative engineering. This course involved showcasing this by enhancing three different areas of projects that we have worked on previously in the program. These included Software Engineering and Design, Data Structures and Algorithms, and Database enhancements. I chose the same application for all three enhancements: a weight-tracking Android mobile application.</p>
 
     <p>This capstone project demonstrates my ability to refine and improve pre-existing code. By doing so for code that I also created myself over a year ago, it represents my improvements and knowledge gained within the programming realm. What was once a very simple weight-tracking application that barely handled logic or data is now a fully functional application that stores, sorts, and visualizes data effectively. Each enhancement added a key layer to creating a polished, modular, and scalable app that reflects industry-standard practices.</p>
 
+    <p>Beyond technical growth, I’ve also developed stronger soft skills including time management and technical communication. I’m now better at describing complex issues at my internship, organizing my workload efficiently, and speaking the language of professionals in this space.</p>
+
+    <p>Overall, this program has helped me develop both the confidence and technical toolkit to succeed. I now have the ability to build complete software systems and the mindset to keep evolving as a developer. This ePortfolio stands as proof of my growth and readiness to begin my career in software engineering.</p>
+  </section>
+
+  <section class="summary-card">
+    <h2 class="summary-header">Enhancement Summary</h2>
     <p>In the first enhancement, for software engineering and design, I focused on improving the structure, responsiveness, and clarity of the app. I modularized the layout using XML components and refined the UI for a modern feel. This also included adding a star milestone system for goals and streamlining the navigation for users.</p>
 
     <p>For the second enhancement, centered on data structures and algorithms, I optimized inefficient loops and logic, and added a toggleable chart system that displays user progress across daily, weekly, and monthly views. These updates made the app more dynamic and responsive, and also helped reinforce my skills in algorithm design and scalable logic.</p>
 
     <p>In the third enhancement, focused on databases, I improved the app’s storage system with SQLite, added input validation, dynamic timestamped logging, and redesigned the way logs are stored and retrieved. These upgrades ensure both reliability and future scalability of the application’s data.</p>
-
-    <p>Beyond technical growth, I’ve also developed stronger soft skills including time management and technical communication. I’m now better at describing complex issues at my internship, organizing my workload efficiently, and speaking the language of professionals in this space.</p>
-
-    <p>Overall, this program has helped me develop both the confidence and technical toolkit to succeed. I now have the ability to build complete software systems and the mindset to keep evolving as a developer. This ePortfolio stands as proof of my growth and readiness to begin my career in software engineering.</p>
-  </section>
+    </section>
+  </div>    
 </main>
 
   <footer>
