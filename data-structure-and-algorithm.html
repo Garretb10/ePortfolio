@@ -96,11 +96,14 @@
     }
 
     .card {
-      background-color: var(--surface);
-      padding: 1.8rem;
-      border-radius: 12px;
-      border: 1px solid #2a2d33;
-      box-shadow: 0 4px 15px var(--shadow);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+      transform: translateY(-6px);
     }
 
     h2 {
