@@ -14,7 +14,7 @@
       --accent: #38bdf8;
       --hover: #0ea5e9;
       --shadow: rgba(0, 0, 0, 0.4);
-      --icy: #dffaff;
+      --icy: #b3e6ff;
     }
 
     body {
@@ -57,10 +57,6 @@
       font-size: 1.1rem;
       color: var(--highlight);
       text-shadow: 0 0 6px rgba(56, 189, 248, 0.7);
-    }
-
-    header h2 {
-      color: var(--icy);
     }
 
     main {
@@ -158,13 +154,16 @@
     .section-group {
       transition: color 0.3s ease;
     }
+
     .section-title {
+      color: var(--icy)
       text-align: center;
-      font-size: 1.6rem;
-      color: var(--icy);
+      font-size: 1.8rem;
       margin: 2rem 0 1.2rem;
       transition: color 0.3s ease, text-shadow 0.3s ease;
+      text-shadow: 0 0 6px var(--hover);
     }
+
 
     .section-group:hover .section-title {
       color: var(--hover);
