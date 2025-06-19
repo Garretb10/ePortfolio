@@ -91,6 +91,19 @@
       text-shadow: 0 0 8px var(--highlight);
     }
 
+    .section-title {
+      text-align: center;
+      color: #38bdf8;
+      font-size: 1.8rem;
+      margin: 3rem 0 1rem;
+      transition: text-shadow 0.3s ease;
+    }
+    
+    .image-grid:hover + .section-title,
+    .section-title:hover {
+      text-shadow: 0 0 12px #38bdf8;
+    }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
