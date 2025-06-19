@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Final Product Showcase</title>
+  <title>Final Product Screenshots</title>
   <style>
     :root {
       --bg: #0b0c10;
@@ -209,6 +209,20 @@
       color: #8eeeff;
       margin-top: 0.5rem;
       font-size: 0.9rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      max-height: 240px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .gallery img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 12px var(--accent);
     }
 
     footer {
