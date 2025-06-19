@@ -150,6 +150,9 @@
       background-color: var(--hover);
     }
 
+    .section-group {
+      transition: color 0.3s ease;
+    }
     .section-title {
       text-align: center;
       font-size: 1.8rem;
@@ -158,10 +161,9 @@
       transition: color 0.3s ease, text-shadow 0.3s ease;
     }
     
-    .grid:hover ~ .section-title,
-    .card:hover ~ .section-title {
+    .section-group:hover .section-title {
       color: var(--hover);
-      text-shadow: 0 0 12px var(--highlight);
+      text-shadow: 0 0 12px var(--hover);
     }
     
     [data-section="supporting"]:hover ~ #supporting-title,
@@ -220,9 +222,9 @@
 
 <main>
 
-  <section class="section">
-    <h2 class="section-title" id="supporting-title">Supporting Materials</h2>
-    <div class="grid" data-section="supporting">
+  <section class="section-group">
+    <h2 class="section-title">Supporting Materials</h2>
+    <div class="grid">
       <div class="card">
         <h2>Professional & Enhancement Summaries</h2>
         <p>A reflection of my accomplishments and progress in the Computer Science field.</p>
@@ -241,9 +243,9 @@
     </div>
   </section>
 
-  <section class="section">
-    <h2 class="section-title" id="enhancements-title">Enhancements</h2>
-    <div class="grid" data-section="enhancements">
+  <section class="section-group">
+    <h2 class="section-title">Enhancements</h2>
+    <div class="grid">
       <div class="card">
         <h2>Software Design Enhancement</h2>
         <p>Enhancing UI structure, responsiveness, and feature logic to follow modern design standards.</p>
@@ -263,7 +265,6 @@
   </section>
 
 </main>
-
 
   <footer>
     © 2025 Garret Blake
