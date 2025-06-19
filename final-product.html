@@ -107,31 +107,30 @@
     .gallery {
       display: flex;
       flex-wrap: wrap;
+      gap: 1rem;
       justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
-
-    .gallery figure {
-      flex: 1 1 calc(33.333% - 1rem);
-      background: var(--surface);
-      padding: 1rem;
-      border-radius: 12px;
-      border: 1px solid rgba(56, 189, 248, 0.1);
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.05);
+    
+    .gallery a {
+      flex: 1 1 300px;
+      max-width: 300px;
+      display: block;
       text-align: center;
     }
-
+    
     .gallery img {
       width: 100%;
-      border-radius: 8px;
-      transition: transform 0.2s ease;
-      cursor: pointer;
+      height: auto;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-
+    
     .gallery img:hover {
       transform: scale(1.02);
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+      box-shadow: 0 0 12px var(--accent);
     }
 
     figure {
@@ -232,12 +231,6 @@
       font-size: 0.85rem;
     }
 
-    @media (max-width: 768px) {
-      .gallery figure {
-        flex: 1 1 calc(50% - 1rem);
-      }
-    }
-
     @media (max-width: 600px) {
       .gallery figure {
         flex: 1 1 100%;
@@ -245,6 +238,21 @@
 
       h2.section-title {
         font-size: 1.4rem;
+      }
+
+      nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 0.6rem;
+        row-gap: 0.2rem;
+        padding: 0.75rem 0.5rem;
+        justify-items: center;
+      }
+      
+      nav a {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        text-align: center;
       }
     }
   </style>
