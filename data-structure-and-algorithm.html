@@ -166,6 +166,11 @@
     }
 
     @media (max-width: 600px) {
+      main {
+        display: block;
+        padding: 1rem;
+      }
+    
       .mobile-top {
         display: flex;
         flex-direction: row;
@@ -184,8 +189,7 @@
       .narrative-container {
         display: block;
       }
-
-      
+    
       header h1 {
         font-size: 1.8rem;
         line-height: 2.2rem;
@@ -212,26 +216,6 @@
         text-align: center;
       }
     
-      main > div:first-child {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-      }
-    
-      main > div:first-child .card {
-        flex: 1 1 48%;
-        max-width: 48%;
-        padding: 1.2rem;
-      }
-    
-      .grid {
-        flex-direction: column;
-        align-items: center;
-      }
-    
       .card {
         max-width: 100%;
       }
@@ -242,6 +226,7 @@
     
       .narrative {
         width: 100%;
+        margin-top: 1rem;
       }
     }
 
