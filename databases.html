@@ -109,13 +109,6 @@
       box-shadow: 0 0 10px rgba(56, 189, 248, 0.05), 0 0 30px rgba(56, 189, 248, 0.03);
     }
 
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      align-self: start;
-    }
-
     h2 {
       color: var(--highlight);
       font-size: 1.4rem;
@@ -164,6 +157,13 @@
       gap: 2rem;
     }
 
+    .top-section {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
     footer {
       text-align: center;
       margin-top: 1rem;
@@ -173,17 +173,36 @@
     }
 
     @media (max-width: 600px) {
+      main {
+        display: block;
+        padding: 1rem;
+      }
+
+      .top-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .top-section .card {
+        flex: 1 1 46%;
+        max-width: 46%;
+        padding: 0.75rem;
+        justify-content: space-between;
+      }
+
       header h1 {
         font-size: 1.8rem;
         line-height: 2.2rem;
         padding: 0 1rem;
         word-break: break-word;
       }
-    
+
       header p {
         font-size: 0.9rem;
       }
-    
+
       nav {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -192,29 +211,28 @@
         padding: 0.75rem 0.5rem;
         justify-items: center;
       }
-    
+
       nav a {
         font-size: 0.9rem;
         padding: 0.5rem;
         text-align: center;
       }
-    
-      .grid {
-        flex-direction: column;
-        align-items: center;
-      }
-    
+
       .card {
         max-width: 100%;
       }
-    
+
       .card p {
         font-size: 0.85rem;
+      }
+
+      .narrative-container {
+        display: block;
       }
     }
   </style>
 </head>
-<body> 
+<body>
   <canvas id="particles"></canvas>
   <header>
     <h1>Database Enhancement</h1>
@@ -230,7 +248,7 @@
   </nav>
 
   <main>
-    <div class="sidebar">
+    <div class="top-section">
       <div class="card">
         <h2>Overview</h2>
         <p>This enhancement focused on strengthening the database logic and data reliability of the Android weight-tracking app. Key improvements included data validation, structured storage updates, and consistent formatting for chart-ready input.</p>
@@ -246,28 +264,24 @@
     <div class="card narrative">
       <h2>Narrative</h2>
       <div class="narrative-container">
-        <div>
-          <div class="narrative-block">
-            <h3>1. Artifact Description</h3>
-            <p>The artifact that I selected for this enhancement is the same one as the past two enhancements, the Android weight-tracking application. I originally created this app about a year and a half ago, in my CS-360 mobile development class. This app allows users to log daily weight and calorie entries, track these with a charting system, and earn milestones with a star tracking system. This is done by using a SQLite back-end that dynamically logs all entries that a user makes.</p>
-          </div>
-
-          <div class="narrative-block">
-            <h3>2. Justification & Enhancements</h3>
-            <p>This artifact reflects my ability to optimize and correctly enhance the backend database of a mobile app. Using SQLite originally, I already had a decent starting point with this. It was able to store logs in SharedPreferences and had the ability to store stars. For this enhancement, I wanted to improve the scalability and reliability of this database. First, I ensured that data was correctly displayed across all sessions. Then, I added dynamic timestamps to all logs, created structured strings, and added extra logic for things like parsing. Lastly, I added secure input validation that allows for no bad entries to be stored, erasing the need of most of the above additions.</p>
-          </div>
+        <div class="narrative-block">
+          <h3>1. Artifact Description</h3>
+          <p>The artifact that I selected for this enhancement is the same one as the past two enhancements, the Android weight-tracking application. I originally created this app about a year and a half ago, in my CS-360 mobile development class. This app allows users to log daily weight and calorie entries, track these with a charting system, and earn milestones with a star tracking system. This is done by using a SQLite back-end that dynamically logs all entries that a user makes.</p>
         </div>
 
-        <div>
-          <div class="narrative-block">
-            <h3>3. Course Outcomes</h3>
-            <p>Yes, I was able to meet all the outcomes I planned on completing during this. I was able to develop a very secure and functional backend that handles the data within this app. It validates all entered data and stores logs with dynamic timestamps for entries. The only update I could think of for the database enhancement would be eventually moving this to the cloud. This would ensure there is never data loss and users would feel more secure.</p>
-          </div>
+        <div class="narrative-block">
+          <h3>2. Justification & Enhancements</h3>
+          <p>This artifact reflects my ability to optimize and correctly enhance the backend database of a mobile app. Using SQLite originally, I already had a decent starting point with this. It was able to store logs in SharedPreferences and had the ability to store stars. For this enhancement, I wanted to improve the scalability and reliability of this database. First, I ensured that data was correctly displayed across all sessions. Then, I added dynamic timestamps to all logs, created structured strings, and added extra logic for things like parsing. Lastly, I added secure input validation that allows for no bad entries to be stored, erasing the need of most of the above additions.</p>
+        </div>
 
-          <div class="narrative-block">
-            <h3>4. Reflection</h3>
-            <p>This enhancement helped me learn how to correctly update a backend. While doing this, I faced a couple issues like data loss, improper data structuring at times, and overall data challenges. However, after I finished this, I realized how important small tweaks can be to a database. After this enhancement, the speed of the front-end is much quicker than before. There are no delays in data return in the charts or records, and the app overall runs much more smoothly. I also no longer have random data disappearing or being put in the wrong spot. All data is only found in the area or chart it is supposed to and is structured so that it is easily conveyed to the user, no matter their needs.</p>
-          </div>
+        <div class="narrative-block">
+          <h3>3. Course Outcomes</h3>
+          <p>Yes, I was able to meet all the outcomes I planned on completing during this. I was able to develop a very secure and functional backend that handles the data within this app. It validates all entered data and stores logs with dynamic timestamps for entries. The only update I could think of for the database enhancement would be eventually moving this to the cloud. This would ensure there is never data loss and users would feel more secure.</p>
+        </div>
+
+        <div class="narrative-block">
+          <h3>4. Reflection</h3>
+          <p>This enhancement helped me learn how to correctly update a backend. While doing this, I faced a couple issues like data loss, improper data structuring at times, and overall data challenges. However, after I finished this, I realized how important small tweaks can be to a database. After this enhancement, the speed of the front-end is much quicker than before. There are no delays in data return in the charts or records, and the app overall runs much more smoothly. I also no longer have random data disappearing or being put in the wrong spot. All data is only found in the area or chart it is supposed to and is structured so that it is easily conveyed to the user, no matter their needs.</p>
         </div>
       </div>
     </div>
