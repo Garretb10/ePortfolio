@@ -149,6 +149,38 @@
       border-radius: 8px;
     }
 
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      justify-items: center;
+    }
+    
+    .image-grid figure {
+      text-align: center;
+      margin: 0;
+    }
+    
+    .image-grid img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .image-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+    }
+    
+    .image-grid figcaption {
+      color: #8eeeff;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -191,20 +223,29 @@
 
 <main>
   <h2 class="section-title" id="design">Software Design Enhancement</h2>
-  <div class="gallery">
-    <figure>
-      <a href="#img1"><img src="Dial-Menu.png" alt="Dial Menu" /></a>
-      <figcaption>Dial Menu</figcaption>
-    </figure>
-    <figure>
-      <a href="#img2"><img src="Main-Home-Page.png" alt="Main Home Page" /></a>
-      <figcaption>Main Home Page</figcaption>
-    </figure>
-    <figure>
-      <a href="#img3"><img src="Review-Logs-PopUp.png" alt="Review Logs" /></a>
-      <figcaption>Review Logs PopUp</figcaption>
-    </figure>
-  </div>
+    <div class="image-grid">
+      <figure>
+        <a href="Dial-Menu.png" target="_blank">
+          <img src="Dial-Menu.png" alt="Dial Menu">
+        </a>
+        <figcaption>Dial Menu</figcaption>
+      </figure>
+    
+      <figure>
+        <a href="Main-Home-Page.png" target="_blank">
+          <img src="Main-Home-Page.png" alt="Main Home Page">
+        </a>
+        <figcaption>Main Home Page</figcaption>
+      </figure>
+    
+      <figure>
+        <a href="Review-Logs-PopUp.png" target="_blank">
+          <img src="Review-Logs-PopUp.png" alt="Review Logs Popup">
+        </a>
+        <figcaption>Review Logs Popup</figcaption>
+      </figure>
+    </div>
+
 
   <h2 class="section-title" id="algo">Data Structures & Algorithms Enhancement</h2>
   <div class="gallery">
