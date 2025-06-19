@@ -67,7 +67,7 @@
     .grid {
       display: grid;
       flex-wrap: wrap;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(3, 1fr));
       gap: 2rem;
       justify-items: center;
     }
@@ -149,6 +149,27 @@
     .card a:hover {
       background-color: var(--hover);
     }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--highlight);
+      margin: 2rem 0 1.2rem;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    
+    .grid:hover ~ .section-title,
+    .card:hover ~ .section-title {
+      color: var(--hover);
+      text-shadow: 0 0 12px var(--highlight);
+    }
+    
+    [data-section="supporting"]:hover ~ #supporting-title,
+    [data-section="enhancements"]:hover ~ #enhancements-title {
+      color: var(--hover);
+      text-shadow: 0 0 12px var(--highlight);
+    }
+
 
     footer {
       text-align: center;
