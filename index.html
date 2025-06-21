@@ -157,16 +157,19 @@
     }
 
     .section-title {
-      color: var(--accent);
+      position: relative;
+      color: #ffffff;
       text-align: center;
-      display: block;
-      width: 100%;
+      display: inline-block;
+      padding: 1rem 2rem;
       font-size: 1.8rem;
-      margin: 2rem 0 1.2rem;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
+      margin: 2rem auto 1.5rem;
       text-shadow: 0 0 6px var(--hover);
+      background: url('header.png') no-repeat center center;
+      background-size: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
     }
-
 
     .section-group:hover .section-title {
       color: var(--hover);
