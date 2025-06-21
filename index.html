@@ -38,47 +38,23 @@
 
     header {
       background: url('header-background.png') no-repeat center center;
-      background-size: 100% 100%;
-      height: 220px;
+      background-size: cover;
+      height: auto;
       width: 100%;
-      margin: 0 auto;
-      padding-top: 2rem;
+      padding: 3rem 1rem 2.5rem;
       text-align: center;
       position: relative;
       z-index: 1;
-      border-radius: 0 0 12px 12px;
     }
-
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 0;
-      border-radius: 12px;
-    }
-
-    header::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 20px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0), #0b0c10);
-    }
-    
-    header h1, header p {
-      position: relative;
-      z-index: 1;
-    }
-    
     header h1 {
       color: #ffffff;
+      font-size: 2.5rem;
       text-shadow: 0 0 10px rgba(0, 200, 255, 0.85);
     }
-    
     header p {
-      color: #ffffff;
+      color: #d0f0ff;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
       text-shadow: 0 0 6px rgba(0, 200, 255, 0.65);
     }
 
@@ -202,15 +178,16 @@
     }
     
     nav.spacer-nav {
-      background: rgba(28, 34, 44, 0.5);
-      padding: 1rem;
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #2a2d33;
-      margin: 0 auto; 
-      width: 100%;
-      max-width: 1200px;
-      box-sizing: border-box;
-    }
+    background: rgba(28, 34, 44, 0.5);
+    padding: 1rem;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #2a2d33;
+    margin: 0 auto;
+    margin-top: -0.5rem;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+  }
 
     footer {
       text-align: center;
