@@ -38,13 +38,17 @@
 
     header {
       background: url('header.png') no-repeat center center;
-      background-size: 100% auto;
-      height: 220px;
-      padding: 2rem 1rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: auto;             
+      aspect-ratio: 16 / 4.5;  
+      width: 100%;
+      padding: 0;
+      margin: 0 auto;
       text-align: center;
       position: relative;
       z-index: 1;
-      border-radius: 12px;
     }
     
     header::before {
