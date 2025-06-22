@@ -1,415 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Final Product Screenshots</title>
-<style>
-:root {
---bg: #0b0c10;
---surface: rgba(28, 31, 38, 0.88);
---text: #f0f0f0;
---muted: #aaa;
---highlight: #61dafb;
---accent: #38bdf8;
---hover: #0ea5e9;
---shadow: rgba(0, 0, 0, 0.4);
---icy: #b3e6ff;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Final Product Screenshots</title>
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --surface: rgba(28, 31, 38, 0.88);
+      --text: #f0f0f0;
+      --muted: #aaa;
+      --highlight: #61dafb;
+      --accent: #38bdf8;
+      --hover: #0ea5e9;
+      --shadow: rgba(0, 0, 0, 0.4);
+      --icy: #b3e6ff;
+    }
 
-* {
-box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-margin: 0;
-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-background-color: var(--bg);
-color: var(--text);
-overflow-x: hidden;
-}
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
 
-canvas {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: -1;
-}
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
 
-header {
-background: url('lower-background.png') no-repeat center center;
-background-size: cover;
-width: 100%;
-padding: 2rem 1rem 1.2rem;
-text-align: center;
-position: relative;
-z-index: 1;
-}
+    header {
+      background: url('lower-background.png') no-repeat center center;
+      background-size: cover;
+      width: 100%;
+      padding: 2rem 1rem 1.2rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
 
-header h1 {
-color: #ffffff;
-font-size: 2.5rem;
-text-shadow: 0 0 10px rgba(0, 200, 255, 0.85);
-}
+    header h1 {
+      color: #ffffff;
+      font-size: 2.5rem;
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.85);
+    }
 
-header p {
-color: #d0f0ff;
-font-size: 1.1rem;
-margin-top: 0.5rem;
-text-shadow: 0 0 6px rgba(0, 200, 255, 0.65);
-}
+    header p {
+      color: #d0f0ff;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      text-shadow: 0 0 6px rgba(0, 200, 255, 0.65);
+    }
 
-nav {
-display: flex;
-justify-content: center;
-gap: 2rem;
-background: rgba(28, 34, 44, 0.5);
-padding: 1rem;
-backdrop-filter: blur(8px);
-border-bottom: 1px solid #2a2d33;
-}
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: rgba(28, 34, 44, 0.5);
+      padding: 1rem;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #2a2d33;
+    }
 
-nav a {
-color: #e0f7ff;
-text-decoration: none;
-font-weight: bold;
-transition: color 0.3s ease, text-shadow 0.3s ease;
-}
+    nav a {
+      color: #e0f7ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
 
-nav a:hover {
-color: #8eeeff;
-text-shadow: 0 0 8px var(--accent);
-}
+    nav a:hover {
+      color: #8eeeff;
+      text-shadow: 0 0 8px var(--accent);
+    }
 
-main {
-max-width: 1200px;
-margin: 2rem auto;
-padding: 0 1rem;
-}
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
 
-h2.section-title {
-text-align: center;
-font-size: 1.8rem;
-color: var(--icy);
-text-shadow: 0 0 6px var(--hover);
-margin-bottom: 1rem;
-transition: color 0.3s ease, text-shadow 0.3s ease;
-}
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--icy);
+      text-shadow: 0 0 6px var(--hover);
+      margin-bottom: 1rem;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
 
-.gallery:hover ~ h2.section-title,
-h2.section-title:hover {
-.card:hover {
-  box-shadow: 0 0 12px var(--hover);
+    .screenshot-section:hover .section-title {
+      color: var(--hover);
+      text-shadow: 0 0 10px var(--highlight);
+    }
 
-}
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      justify-items: center;
+    }
 
-.section-title {
-text-align: center;
-color: #9eeeff;
-text-shadow: 0 0 10px #48d6ff(--hover);
-font-size: 1.6rem;
-margin: 3rem 0 1rem;
-transition: text-shadow 0.3s ease;
-}
+    .image-grid figure {
+      text-align: center;
+      margin: 0;
+    }
 
-.image-grid:hover + .gallery,
-.section-title:hover {
-text-shadow: 0 0 12px #38bdf8;
-}
+    .image-grid img {
+      max-width: 100%;
+      max-height: 650px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
 
-.gallery {
-display: flex;
-flex-wrap: wrap;
-gap: 1rem;
-justify-content: center;
-margin-bottom: 2rem;
-}
+    .image-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+    }
 
-.gallery a {
-flex: 1 1 300px;
-max-width: 300px;
-display: block;
-text-align: center;
-}
+    figcaption {
+      background-color: var(--surface);
+      color: #e0e0e0;
+      font-size: 0.85rem;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      margin-top: 0.5rem;
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.03);
+      display: inline-block;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
 
-.gallery img:hover {
-transform: scale(1.02);
-box-shadow: 0 0 12px var(--accent);
-}
+    figure:hover figcaption {
+      text-shadow: 0 0 8px var(--highlight);
+      color: var(--highlight);
+    }
 
-figure {
-position: relative;
-text-align: center;
-margin: 1rem;
-}
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
 
-figcaption {
-background-color: rgba(28, 31, 38, 0.88);
-color: #e0e0e0;
-font-size: 0.85rem;
-padding: 0.75rem 1rem;
-border-radius: 12px;
-margin-top: 0.5rem;
-border: 1px solid rgba(56, 189, 248, 0.15);
-box-shadow: 0 0 10px rgba(56, 189, 248, 0.03);
-display: inline-block;
-}
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        padding: 0 1rem;
+        word-break: break-word;
+      }
 
-figure:hover figcaption {
-text-shadow: 0 0 8px var(--highlight);
-color: var(--highlight);
-}
+      header p {
+        font-size: 0.9rem;
+      }
 
-.lightbox {
-display: none;
-position: fixed;
-top: 0; left: 0;
-width: 100vw;
-height: 100vh;
-background: rgba(0,0,0,0.85);
-justify-content: center;
-align-items: center;
-z-index: 9999;
-}
+      nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 0.6rem;
+        row-gap: 0.2rem; 
+        padding: 0.75rem 0.5rem;
+        justify-items: center;
+      }
 
-.lightbox:target {
-display: flex;
-}
-
-.lightbox img {
-max-width: 90%;
-max-height: 90%;
-border-radius: 8px;
-}
-
-.image-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 1.5rem;
-margin-bottom: 2.5rem;
-justify-items: center;
-}
-
-.image-grid figure {
-text-align: center;
-margin: 0;
-}
-
-.image-grid img {
-max-width: 100%;
-max-height: 650px;
-border-radius: 12px;
-box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
-transition: transform 0.3s ease;
-cursor: pointer;
-}
-
-.image-grid img:hover {
-transform: scale(1.03);
-box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
-}
-
-.image-grid figcaption {
-color: #8eeeff;
-margin-top: 0.5rem;
-font-size: 0.9rem;
-}
-
-.screenshot-section:hover .section-title {
-color: var(--hover);
-text-shadow: 0 0 8px var(--highlight);
-}
-
-footer {
-text-align: center;
-padding: 1rem;
-color: var(--muted);
-font-size: 0.85rem;
-}
-
-@media (max-width: 600px) {
-header h1 {
-font-size: 1.8rem;
-line-height: 2.2rem;
-padding: 0 1rem;
-word-break: break-word;
-}
-
-header p {
-font-size: 0.9rem;
-}
-
-nav {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-column-gap: 0.6rem;
-row-gap: 0.2rem; 
-padding: 0.75rem 0.5rem;
-justify-items: center;
-}
-
-nav a {
-font-size: 0.9rem;
-padding: 0.5rem;
-text-align: center;
-}
-
-.grid {
-flex-direction: column;
-align-items: center;
-}
-
-.card {
-max-width: 100%;
-}
-
-.card p {
-font-size: 0.85rem;
-}
-}
-</style>
+      nav a {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 <canvas id="particles"></canvas>
 
 <header>
-<h1>Final Product Screenshots</h1>
-<p>CS 499 Capstone</p>
+  <h1>Final Product Screenshots</h1>
+  <p>CS 499 Capstone</p>
 </header>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="professional-summary.html">Summaries</a>
-<a href="initial-code-review.html">Code Review</a>
-<a href="software-design.html">Software Design</a>
-<a href="data-structure-and-algorithm.html">Algorithms</a>
-<a href="databases.html">Databases</a>
+  <a href="index.html">Home</a>
+  <a href="professional-summary.html">Summaries</a>
+  <a href="initial-code-review.html">Code Review</a>
+  <a href="software-design.html">Software Design</a>
+  <a href="data-structure-and-algorithm.html">Algorithms</a>
+  <a href="databases.html">Databases</a>
 </nav>
 
 <main>
-<section class="screenshot-section">
-<h2 class="section-title" id="design">Software Design Enhancements:</h2>
-<div class="image-grid">
-<figure>
-<a href="Dial-Menu.png" target="_blank">
-<img src="Dial-Menu.png" alt="Dial Menu">
-</a>
-<figcaption>Dial Menu</figcaption>
-</figure>
+  <section class="screenshot-section">
+    <h2 class="section-title">Software Design Enhancements:</h2>
+    <div class="image-grid">
+      <figure>
+        <a href="Dial-Menu.png" target="_blank">
+          <img src="Dial-Menu.png" alt="Dial Menu">
+        </a>
+        <figcaption>Dial Menu</figcaption>
+      </figure>
+      <figure>
+        <a href="Main-Home-Page.png" target="_blank">
+          <img src="Main-Home-Page.png" alt="Main Home Page">
+        </a>
+        <figcaption>Main Home Page</figcaption>
+      </figure>
+      <figure>
+        <a href="Review-Logs-PopUp.png" target="_blank">
+          <img src="Review-Logs-PopUp.png" alt="Review Logs Popup">
+        </a>
+        <figcaption>Review Logs Popup</figcaption>
+      </figure>
+    </div>
+  </section>
 
-<figure>
-<a href="Main-Home-Page.png" target="_blank">
-<img src="Main-Home-Page.png" alt="Main Home Page">
-</a>
-<figcaption>Main Home Page</figcaption>
-</figure>
+  <section class="screenshot-section">
+    <h2 class="section-title">Algorithms & Data Structures Enhancements:</h2>
+    <div class="image-grid">
+      <figure>
+        <a href="Yearly-Bar-Chart.png" target="_blank">
+          <img src="Yearly-Bar-Chart.png" alt="Yearly Bar Chart">
+        </a>
+        <figcaption>Yearly Bar Chart</figcaption>
+      </figure>
+      <figure>
+        <a href="Weekly-Line-Chart.png" target="_blank">
+          <img src="Weekly-Line-Chart.png" alt="Weekly Line Chart">
+        </a>
+        <figcaption>Weekly Line Chart</figcaption>
+      </figure>
+      <figure>
+        <a href="Star-History.png" target="_blank">
+          <img src="Star-History.png" alt="Star History">
+        </a>
+        <figcaption>Star History</figcaption>
+      </figure>
+    </div>
+  </section>
 
-<figure>
-<a href="Review-Logs-PopUp.png" target="_blank">
-<img src="Review-Logs-PopUp.png" alt="Review Logs Popup">
-</a>
-<figcaption>Review Logs Popup</figcaption>
-</figure>
-</div>
-</section>
-
-<section class="screenshot-section">
-<h2 class="section-title" id="algo">Algorithms & Data Structures Enhancements:</h2>
-<div class="image-grid">
-<figure>
-<a href="Yearly-Bar-Chart.png" target="_blank">
-<img src="Yearly-Bar-Chart.png" alt="Yearly Bar Chart">
-</a>
-<figcaption>Yearly Bar Chart</figcaption>
-</figure>
-
-<figure>
-<a href="Weekly-Line-Chart.png" target="_blank">
-<img src="Weekly-Line-Chart.png" alt="Weekly Line Chart">
-</a>
-<figcaption>Weekly Line Chart</figcaption>
-</figure>
-
-<figure>
-<a href="Star-History.png" target="_blank">
-<img src="Star-History.png" alt="Star History">
-</a>
-<figcaption>Star History</figcaption>
-</figure>
-</div>
-</section>
-
-<section class="screenshot-section">
-<h2 class="section-title" id="db">Database Enhancements:</h2>
-<div class="image-grid">
-<figure>
-<a href="Invalid-Entry.png" target="_blank">
-<img src="Invalid-Entry.png" alt="Invalid Entry">
-</a>
-<figcaption>Invalid Entry</figcaption>
-</figure>
-
-<figure>
-<a href="Timestamps.png" target="_blank">
-<img src="Timestamps.png" alt="Timestamps">
-</a>
-<figcaption>Timestamps</figcaption>
-</figure>
-
-<figure>
-<a href="Clear-App-Data.png" target="_blank">
-<img src="Clear-App-Data.png" alt="Clear App Data">
-</a>
-<figcaption>Clear App Data</figcaption>
-</figure>
-</div>
-</section>
+  <section class="screenshot-section">
+    <h2 class="section-title">Database Enhancements:</h2>
+    <div class="image-grid">
+      <figure>
+        <a href="Invalid-Entry.png" target="_blank">
+          <img src="Invalid-Entry.png" alt="Invalid Entry">
+        </a>
+        <figcaption>Invalid Entry</figcaption>
+      </figure>
+      <figure>
+        <a href="Timestamps.png" target="_blank">
+          <img src="Timestamps.png" alt="Timestamps">
+        </a>
+        <figcaption>Timestamps</figcaption>
+      </figure>
+      <figure>
+        <a href="Clear-App-Data.png" target="_blank">
+          <img src="Clear-App-Data.png" alt="Clear App Data">
+        </a>
+        <figcaption>Clear App Data</figcaption>
+      </figure>
+    </div>
+  </section>
 </main>
 
 <footer>
-© 2025 Garret Blake
+  © 2025 Garret Blake
 </footer>
 
 <script>
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+  const canvas = document.getElementById("particles");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-const particles = Array.from({ length: 80 }, () => ({
-x: Math.random() * canvas.width,
-y: Math.random() * canvas.height,
-r: Math.random() * 2 + 1,
-dx: Math.random() * 0.5 - 0.25,
-dy: Math.random() * 0.5 - 0.25
-}));
+  const particles = Array.from({ length: 80 }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2 + 1,
+    dx: Math.random() * 0.5 - 0.25,
+    dy: Math.random() * 0.5 - 0.25
+  }));
 
-function animate() {
-ctx.clearRect(0, 0, canvas.width, canvas.height);
-ctx.fillStyle = "#b3e6ff";
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#b3e6ff";
     ctx.shadowColor = "#b3e6ff";
     ctx.shadowBlur = 10;
 
-particles.forEach(p => {
-p.x += p.dx;
-p.y += p.dy;
-if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-ctx.beginPath();
-ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-ctx.fill();
-});
-requestAnimationFrame(animate);
-}
+    particles.forEach(p => {
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
 
-animate();
+  animate();
 
-window.addEventListener("resize", () => {
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-});
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
 </script>
 </body>
 </html>
