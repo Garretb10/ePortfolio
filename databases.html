@@ -21,13 +21,19 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: url('lower-background.png') center center / cover no-repeat fixed;
       background-color: var(--bg);
       color: var(--icy);
       overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     canvas {
@@ -91,6 +97,7 @@
       max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;
+      flex: 1;
     }
 
     .card {
@@ -294,7 +301,7 @@
           <p>Yes, I was able to meet all the outcomes I planned on completing during this. I was able to develop a very secure and functional backend that handles the data within this app. It validates all entered data and stores logs with dynamic timestamps for entries. The only update I could think of for the database enhancement would be eventually moving this to the cloud. This would ensure there is never data loss and users would feel more secure.</p>
 
           <h3>4. Reflection</h3>
-          <p>This enhancement helped me learn how to correctly update a backend. While doing this, I faced a couple issues like data loss and improper data structuring at times. However, I realized how important small tweaks can be to a database. After this enhancement, the speed of the front-end is much quicker than before. There are no delays in data return in the charts or records, and the app overall runs much more smoothly. I also no longer have data disappearing or being in the wrong spot at all.</p>
+          <p>This enhancement helped me learn how to correctly update a backend. While doing this, I faced a couple issues like data loss and improper data structuring at times. However, I realized how important small tweaks can be to a database. After this enhancement, the speed of the front-end is much quicker than before. There are no delays in data return in the charts or records, and the app overall runs much more smoothly. I also no longer have data disappearing or being in the wrong spot.</p>
         </div>
       </div>
     </div>
