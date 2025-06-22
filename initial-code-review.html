@@ -1,165 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Initial Code Review</title>
-  <style>
-    :root {
-      --bg: #0b0c10;
-      --surface: #1c1f26;
-      --text: #f0f0f0;
-      --muted: #aaa;
-      --highlight: #61dafb;
-      --accent: #38bdf8;
-      --hover: #0ea5e9;
-      --shadow: rgba(0, 0, 0, 0.4);
-      --icy: #b3e6ff;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Initial Code Review</title>
+<style>
+:root {
+--bg: #0b0c10;
+--surface: #1c1f26;
+--text: #f0f0f0;
+--muted: #aaa;
+--highlight: #61dafb;
+--accent: #38bdf8;
+--hover: #0ea5e9;
+--shadow: rgba(0, 0, 0, 0.4);
+--icy: #b3e6ff;
+}
 
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-        
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: url('lower-background.png') center center / cover no-repeat fixed;
-      background-color: var(--bg);
-      color: var(--icy);
-      overflow-x: hidden;
-      overflow-y: auto;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+html, body {
+height: 100%;
+margin: 0;
+}
 
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
+body {
+margin: 0;
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+background: url('lower-background.png') center center / cover no-repeat fixed;
+background-color: var(--bg);
+color: var(--icy);
+overflow-x: hidden;
+overflow-y: auto;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
 
-    header {
-      background: rgba(20, 25, 35, 0.7);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      width: 100%;
-      padding: 2rem 1rem 1.2rem;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-    
-    header h1 {
-      color: #ffffff;
-      font-size: 2.5rem;
-      text-shadow: 0 0 10px rgba(0, 200, 255, 0.85);
-    }
-    
-    header p {
-      color: #d0f0ff;
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-      text-shadow: 0 0 6px rgba(0, 200, 255, 0.65);
-    }
+canvas {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background: rgba(28, 34, 44, 0.5);
-      padding: 1rem;
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #2a2d33;
-    }
+header {
+background: rgba(20, 25, 35, 0.7);
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+width: 100%;
+padding: 2rem 1rem 1.2rem;
+text-align: center;
+position: relative;
+z-index: 1;
+}
 
-    nav a {
-      color: #e0f7ff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-    
-    nav a:hover {
-      color: #8eeeff;
-      text-shadow: 0 0 8px #38bdf8;
-    }
+header h1 {
+color: #ffffff;
+font-size: 2.5rem;
+text-shadow: 0 0 10px rgba(0, 200, 255, 0.85);
+}
 
-    main {
-      flex: 1;
-      min-height: 0;
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+header p {
+color: #d0f0ff;
+font-size: 1.1rem;
+margin-top: 0.5rem;
+text-shadow: 0 0 6px rgba(0, 200, 255, 0.65);
+}
 
-    .grid {
-      display: grid;
-      flex-wrap: wrap;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 6rem;
-      justify-items: center;
-    }
-        
-    .card {
-      background-color: rgba(28, 31, 38, 0.88);
-      padding: 2rem;
-      border-radius: 14px;
-      max-width: 400px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 1px solid rgba(56, 189, 248, 0.15);
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.05);
-    }
-  
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 12px var(--hover);
-    }
+nav {
+display: flex;
+justify-content: center;
+gap: 2rem;
+background: rgba(28, 34, 44, 0.5);
+padding: 1rem;
+backdrop-filter: blur(8px);
+border-bottom: 1px solid #2a2d33;
+}
 
-    h2 {
-      color: var(--icy);
-      text-shadow: 0 0 6px var(--hover);
-      font-size: 1.6rem;
-      margin-top: 0;
-    }
+nav a {
+color: #e0f7ff;
+text-decoration: none;
+font-weight: bold;
+transition: color 0.3s ease, text-shadow 0.3s ease;
+}
 
-    .card:hover h2 {
-      color: var(--highlight);
-      text-shadow: 0 0 8px var(--highlight);
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
+nav a:hover {
+color: #8eeeff;
+text-shadow: 0 0 8px #38bdf8;
+}
 
-    p {
-      color: #dffaff;
-      text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
+main {
+flex: 1;
+min-height: 0;
+max-width: 1100px;
+margin: 2rem auto;
+padding: 0 1rem;
+}
 
-    .download-button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background: var(--accent);
-      color: #000;
-      font-weight: bold;
-      border-radius: 6px;
-      text-decoration: none;
-      width: fit-content;
-      transition: background 0.3s ease;
-    }
+.grid {
+display: flex;
+justify-content: center;
+gap: 2rem;
+align-items: stretch; 
+flex-wrap: wrap;
+}
 
-    .download-button:hover {
-      background: var(--hover);
-    }
+.card {
+background-color: rgba(28, 31, 38, 0.88);
+padding: 2rem;
+border-radius: 14px;
+flex: 1 1 300px;
+max-width: 400px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+border: 1px solid rgba(56, 189, 248, 0.15);
+box-shadow: 0 0 12px rgba(56, 189, 248, 0.05);
+}
+
+.card:hover {
+transform: translateY(-6px);
+box-shadow: 0 0 12px var(--hover);
+}
+
+h2 {
+color: var(--icy);
+text-shadow: 0 0 6px var(--hover);
+font-size: 1.6rem;
+margin-top: 0;
+}
+
+.card:hover h2 {
+color: var(--highlight);
+text-shadow: 0 0 8px var(--highlight);
+transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+p {
+color: #dffaff;
+text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+font-size: 0.95rem;
+line-height: 1.5;
+}
+
+.download-button {
+display: inline-block;
+margin-top: 1rem;
+padding: 0.6rem 1.2rem;
+background: var(--accent);
+color: #000;
+font-weight: bold;
+border-radius: 6px;
+text-decoration: none;
+width: fit-content;
+transition: background 0.3s ease;
+}
+
+.download-button:hover {
+background: var(--hover);
+}
 
     body::after {
       content: "";
@@ -173,140 +173,140 @@
       z-index: 1;
     }
 
-    footer {
-      width: 100%;
-      background: rgba(28, 34, 44, 0.5);
-      backdrop-filter: blur(8px);
-      border-top: 1px solid #2a2d33;
-      text-align: center;
-      padding: 1rem;
-      color: #e0f7ff;
-      font-size: 0.85rem;
-      position: relative;
-      z-index: 2;
-    }
+footer {
+width: 100%;
+background: rgba(28, 34, 44, 0.5);
+backdrop-filter: blur(8px);
+border-top: 1px solid #2a2d33;
+text-align: center;
+padding: 1rem;
+color: #e0f7ff;
+font-size: 0.85rem;
+position: relative;
+z-index: 2;
+}
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-        line-height: 2.2rem;
-        padding: 0 1rem;
-        word-break: break-word;
-      }
-    
-      header p {
-        font-size: 0.9rem;
-      }
-    
-      nav {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 0.6rem;
-        row-gap: 0.2rem; 
-        padding: 0.75rem 0.5rem;
-        justify-items: center;
-      }
-    
-      nav a {
-        font-size: 0.9rem;
-        padding: 0.5rem;
-        text-align: center;
-      }
-    
-      .grid {
-        flex-direction: column;
-        align-items: center;
-      }
-    
-      .card {
-        max-width: 100%;
-      }
-    
-      .card p {
-        font-size: 0.85rem;
-      }
-    }
-  </style>
+@media (max-width: 600px) {
+header h1 {
+font-size: 1.8rem;
+line-height: 2.2rem;
+padding: 0 1rem;
+word-break: break-word;
+}
+
+header p {
+font-size: 0.9rem;
+}
+
+nav {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+column-gap: 0.6rem;
+row-gap: 0.2rem; 
+padding: 0.75rem 0.5rem;
+justify-items: center;
+}
+
+nav a {
+font-size: 0.9rem;
+padding: 0.5rem;
+text-align: center;
+}
+
+.grid {
+flex-direction: column;
+align-items: center;
+}
+
+.card {
+max-width: 100%;
+}
+
+.card p {
+font-size: 0.85rem;
+}
+}
+</style>
 </head>
 <body>
-  <canvas id="particles"></canvas>
+<canvas id="particles"></canvas>
 
-  <header>
-    <h1>Initial Code Review</h1>
-    <p>CS 499 Capstone</p>
-  </header>
+<header>
+<h1>Initial Code Review</h1>
+<p>CS 499 Capstone</p>
+</header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="professional-summary.html">Summaries</a>
-    <a href="software-design.html">Software Design</a>
-    <a href="data-structure-and-algorithm.html">Algorithms</a>
-    <a href="databases.html">Databases</a>
-    <a href="final-product.html">Final Product</a>
-  </nav>
+<nav>
+<a href="index.html">Home</a>
+<a href="professional-summary.html">Summaries</a>
+<a href="software-design.html">Software Design</a>
+<a href="data-structure-and-algorithm.html">Algorithms</a>
+<a href="databases.html">Databases</a>
+<a href="final-product.html">Final Product</a>
+</nav>
 
-  <main>
-    <div class="grid">
-      <div class="card left">
-      <h2>Video Walkthrough</h2>
-      <p>This video presents an overview of the original artifact prior to any enhancements. It discusses the app’s initial structure, identifies opportunities for improvement, and outlines the planned modifications for each of the three core areas.</p>
-      <a
-        class="download-button"
-        href="https://www.dropbox.com/scl/fi/2sc592wrdwv6em60p5lys/Initial-Code-Review.mp4?rlkey=wyus88aie8lqdgecnd5gv4vx7&st=uj71p9tj&dl=0"
-        target="_blank"
-      >
-        Watch Code Review Video
-      </a>
-    </div>
-    <div class="card right">
-      <h2>Code Review Summary</h2>
-      <p>The initial version of this project was developed in Android Studio using Java and XML. It tracks user weight and calorie data while promoting consistent progress through visual feedback mechanisms. During the code review, the structure, readability, and efficiency of the original codebase were analyzed to plan enhancements that aligned with best practices in software engineering, data structure, and database design.</p>
-    </div>
-    </div>  
-  </main>
+<main>
+<div class="grid">
+<div class="card left">
+<h2>Video Walkthrough</h2>
+<p>This video presents an overview of the original artifact prior to any enhancements. It discusses the app’s initial structure, identifies opportunities for improvement, and outlines the planned modifications for each of the three core areas.</p>
+<a
+class="download-button"
+href="https://www.dropbox.com/scl/fi/2sc592wrdwv6em60p5lys/Initial-Code-Review.mp4?rlkey=wyus88aie8lqdgecnd5gv4vx7&st=uj71p9tj&dl=0"
+target="_blank"
+>
+Watch Code Review Video
+</a>
+</div>
+<div class="card right">
+<h2>Code Review Summary</h2>
+<p>The initial version of this project was developed in Android Studio using Java and XML. It tracks user weight and calorie data while promoting consistent progress through visual feedback mechanisms. During the code review, the structure, readability, and efficiency of the original codebase were analyzed to plan enhancements that aligned with best practices in software engineering, data structure, and database design.</p>
+</div>
+</div>  
+</main>
 
-  <footer>
-    © 2025 Garret Blake
-  </footer>
+<footer>
+© 2025 Garret Blake
+</footer>
 
-  <script>
-    const canvas = document.getElementById("particles");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  
-    const particles = Array.from({ length: 80 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 2 + 1,
-      dx: Math.random() * 0.5 - 0.25,
-      dy: Math.random() * 0.5 - 0.25
-    }));
-  
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#b3e6ff";
-      ctx.shadowColor = "#b3e6ff";
-      ctx.shadowBlur = 10;
+<script>
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-      particles.forEach(p => {
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      requestAnimationFrame(animate);
-    }
-  
-    animate();
-  
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
+const particles = Array.from({ length: 80 }, () => ({
+x: Math.random() * canvas.width,
+y: Math.random() * canvas.height,
+r: Math.random() * 2 + 1,
+dx: Math.random() * 0.5 - 0.25,
+dy: Math.random() * 0.5 - 0.25
+}));
+
+function animate() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.fillStyle = "#b3e6ff";
+ctx.shadowColor = "#b3e6ff";
+ctx.shadowBlur = 10;
+
+particles.forEach(p => {
+p.x += p.dx;
+p.y += p.dy;
+if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+ctx.beginPath();
+ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+ctx.fill();
+});
+requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener("resize", () => {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+});
+</script>
 </body>
 </html>
