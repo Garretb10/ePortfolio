@@ -201,7 +201,14 @@
         0 0 12px rgba(173, 216, 230, 0.2),
         0 0 18px rgba(56, 189, 248, 0.5);
     }
-    
+
+    .content-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     [data-section="supporting"]:hover ~ #supporting-title,
     [data-section="enhancements"]:hover ~ #enhancements-title {
       color: var(--hover);
@@ -288,7 +295,8 @@
   </header>
 
   <nav class="spacer-nav"></nav>
-
+  <div class="content-wrapper">
+    
 <main>
   <section class="section-group">
     <h2 class="section-title">Supporting Materials:</h2>
