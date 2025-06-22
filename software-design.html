@@ -14,24 +14,26 @@
       --accent: #38bdf8;
       --hover: #0ea5e9;
       --shadow: rgba(0, 0, 0, 0.4);
-      --icy: #dffaff;
-    }
-
-    * {
-      box-sizing: border-box;
+      --icy: #b3e6ff;
     }
 
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: url('lower-background.png') center center / cover no-repeat fixed;
       background-color: var(--bg);
       color: var(--icy);
       overflow-x: hidden;
+      min-height: 100vh;
     }
 
-    .narrative p {
-      font-size: 0.79rem;
-      line-height: 1.6;
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     }
 
     canvas {
@@ -40,12 +42,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: 0;
     }
 
     header {
-      background: url('lower-background.png') no-repeat center center;
-      background-size: cover;
+      background: rgba(20, 25, 35, 0.7);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       width: 100%;
       padding: 2rem 1rem 1.2rem;
       text-align: center;
@@ -58,7 +61,7 @@
       font-size: 2.5rem;
       text-shadow: 0 0 10px rgba(0, 200, 255, 0.85);
     }
-    
+
     header p {
       color: #d0f0ff;
       font-size: 1.1rem;
@@ -69,11 +72,14 @@
     nav {
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
       background: rgba(28, 34, 44, 0.5);
       padding: 1rem;
       backdrop-filter: blur(8px);
       border-bottom: 1px solid #2a2d33;
+      z-index: 2;
+      position: relative;
     }
 
     nav a {
@@ -82,19 +88,18 @@
       font-weight: bold;
       transition: color 0.3s ease, text-shadow 0.3s ease;
     }
-    
+
     nav a:hover {
       color: #8eeeff;
       text-shadow: 0 0 8px #38bdf8;
     }
 
     main {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      gap: 2rem;
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 2rem auto;
       padding: 0 1rem;
+      z-index: 2;
+      position: relative;
     }
 
     .card {
@@ -104,48 +109,47 @@
       border: 1px solid rgba(56, 189, 248, 0.15);
       box-shadow: 0 0 10px rgba(56, 189, 248, 0.05), 0 0 30px rgba(56, 189, 248, 0.03);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 2rem;
     }
-    
+
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 0 12px var(--hover);
     }
 
     h2 {
-      color: #9eeeff;
-      text-shadow: 0 0 10px #48d6ff;
-      font-size: 1.4rem;
-      margin-top: 0;
+      color: var(--icy);
+      text-shadow: 0 0 8px rgba(56, 189, 248, 0.6),
+                   0 0 12px rgba(255, 255, 255, 0.2),
+                   0 0 16px rgba(56, 189, 248, 0.3);
+      font-size: 1.6rem;
     }
-    
+
     .card:hover h2 {
-      color: var(--highlight);
-      text-shadow: 0 0 8px var(--highlight);
-      transition: color 0.3s ease, text-shadow 0.3s ease;
+      color: #8eeeff;
+      text-shadow: 0 0 12px rgba(56, 189, 248, 1);
     }
-    
+
+    h3 {
+      color: var(--icy);
+      text-shadow: 0 0 6px var(--hover);
+      font-size: 1.4rem;
+      margin-top: 0.5rem;
+    }
+
     p {
       color: var(--icy);
       text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
       font-size: 0.9rem;
-      line-height: 1.5;
-      margin-bottom: 1.2rem;
-    }
-
-    h3 {
-      font-size: 1.4rem;
-      color: #f0f0f0;
-      margin-top: 0.5rem;
-      color: var(--icy);
-      text-shadow: 0 0 6px var(--hover);
-    }
-
-    p {
-      color: var(--icy);
-      text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
-      font-size: 0.82rem;
       line-height: 1.6;
       margin-bottom: 1.2rem;
+    }
+
+    .top-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
     }
 
     .download-button {
@@ -170,180 +174,148 @@
       gap: 2rem;
     }
 
-    .top-section {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
     footer {
       text-align: center;
       margin-top: 1rem;
       padding: 1rem;
-      color: var(--muted);
-      font-size: 0.85rem;
+      color: var(--icy);
+      font-size: 0.9rem;
+      text-shadow:
+        0 0 8px rgba(255, 255, 255, 1),
+        0 0 16px rgba(255, 255, 255, 0.8),
+        0 0 24px rgba(173, 216, 230, 0.4);
+      z-index: 2;
+      position: relative;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       main {
-        display: block;
         padding: 1rem;
       }
 
-      .top-section {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-      }
-      
-      .top-section .card {
-        flex: 1 1 46%;
-        max-width: 46%;
-        padding: 0.75rem;
-        justify-content: space-between;
-      }
-      
       header h1 {
         font-size: 1.8rem;
         line-height: 2.2rem;
         padding: 0 1rem;
-        word-break: break-word;
-      }
-    
-      header p {
-        font-size: 0.9rem;
-      }
-    
-      nav {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 0.6rem;
-        row-gap: 0.2rem; 
-        padding: 0.75rem 0.5rem;
-        justify-items: center;
-      }
-    
-      nav a {
-        font-size: 0.9rem;
-        padding: 0.5rem;
-        text-align: center;
-      }
-    
-      .grid {
-        flex-direction: column;
-        align-items: center;
-      }
-    
-      .card {
-        max-width: 100%;
-      }
-    
-      .card p {
-        font-size: 0.85rem;
       }
 
       .narrative-container {
         display: block;
       }
+
+      .card {
+        padding: 1.4rem;
+      }
     }
   </style>
 </head>
 <body>
-<canvas id="particles"></canvas>
+  <canvas id="particles"></canvas>
 
-<header>
-  <h1>Software Design Enhancement</h1>
-  <p>CS 499 Capstone</p>
-</header>
+  <header>
+    <h1>Software Design Enhancement</h1>
+    <p>CS 499 Capstone</p>
+  </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="professional-summary.html">Summaries</a>
-  <a href="initial-code-review.html">Code Review</a>
-  <a href="data-structure-and-algorithm.html">Algorithms</a>
-  <a href="databases.html">Databases</a>
-  <a href="final-product.html">Final Product</a>
-</nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="professional-summary.html">Summaries</a>
+    <a href="initial-code-review.html">Code Review</a>
+    <a href="data-structure-and-algorithm.html">Algorithms</a>
+    <a href="databases.html">Databases</a>
+    <a href="final-product.html">Final Product</a>
+  </nav>
 
-<main>
-  <div class="top-section">
-    <div class="card">
-      <h2>Overview</h2>
-      <p>This enhancement improved the original Android Weight Tracking App by modernizing the UI, separating concerns, and refactoring component logic to better meet current software design standards.</p>
+  <main>
+    <div class="top-section">
+      <div class="card">
+        <h2>Overview</h2>
+        <p>This enhancement improved the original Android Weight Tracking App by modernizing the UI, separating concerns, and refactoring component logic to better meet current software design standards.</p>
+      </div>
+
+      <div class="card">
+        <h2>Code</h2>
+        <a href="https://www.dropbox.com/scl/fi/ef3h7azfi0j5yvfuuwqo8/OriginalCode.zip?rlkey=vxlncu394uvbljbnttic6ptin&dl=0" target="_blank" class="download-button">View Original Code</a><br><br>
+        <a href="https://www.dropbox.com/scl/fi/fnjoh1ey7d1t2vwmvv42k/Software-Design-Enhancement.zip?rlkey=fcds6mikhmvkxnmgk4r2917wn&dl=0" target="_blank" class="download-button">View Enhanced Code</a>
+      </div>
     </div>
 
-    <div class="card">
-      <h2>Code</h2>
-      <a href="https://www.dropbox.com/scl/fi/ef3h7azfi0j5yvfuuwqo8/OriginalCode.zip?rlkey=vxlncu394uvbljbnttic6ptin&dl=0" target="_blank" class="download-button">View Original Code</a><br><br>
-      <a href="https://www.dropbox.com/scl/fi/fnjoh1ey7d1t2vwmvv42k/Software-Design-Enhancement.zip?rlkey=fcds6mikhmvkxnmgk4r2917wn&dl=0" target="_blank" class="download-button">View Enhanced Code</a>
+    <div class="card narrative">
+      <h2>Narrative</h2>
+      <div class="narrative-container">
+        <div>
+          <h3>1. Artifact Description</h3>
+          <p>The artifact that I chose to enhance was a weight-tracking Android mobile application that I had originally worked on in CS-360...</p>
+
+          <h3>2. Justification & Enhancements</h3>
+          <p>The main reason that I included this artifact for my first enhancement is because...</p>
+        </div>
+        <div>
+          <h3>3. Course Outcomes</h3>
+          <p>The difference between this UI/UX and my old project is substantial...</p>
+
+          <h3>4. Reflection</h3>
+          <p>Many files were deleted and then repurposed during this. Now, the classes handle the main login screen...</p>
+        </div>
+      </div>
     </div>
-  </div>
+  </main>
 
-<div class="card narrative">
-  <h2>Narrative</h2>
-  <div class="narrative-container">
-    <div>
-      <h3>1. Artifact Description</h3>
-      <p>The artifact that I chose to enhance was a weight-tracking Android mobile application that I had originally worked on in CS-360. This was made using Android Studio and uses a mix of Java and XML files. I enjoy trying to be healthy, so this app is still very enjoyable to work on. This was my favorite application I have made in school so far, so this gave me a great opportunity to work on something that is both fun and gives a lot of potential to show my growth. Software design has been my favroite aspect aspect of coding so far, with things like UI/UX being pretty important.</p>
+  <footer>
+    © 2025 Garret Blake
+  </footer>
 
-      <h3>2. Justification & Enhancements</h3>
-      <p>The main reason that I included this artifact for my first enhancement is because it is very diverse with the tools and imports I am using in it, as well as mobile applications being a career route that I am considering going down. Backtracking everything and starting from scratch really showed me how much I have improved in my college career. As I mentioned, there are a lot of software development improvements in this new mobile application. I improved the front end overall with a much more polished UI, more pop-up menus or dialogs for cleanliness, and dynamic options.</p>
-    </div>
+  <script>
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
 
-    <div>
-      <h3>3. Course Outcomes</h3>
-      <p>The difference between this UI/UX and my old project is substantial. The code is of a much higher standard, improving all areas of the application. I did almost meet all the outcomes that I planned to meet for this objective. The only one that I did not do is setting a personalized icon for the app on the Android home screen. Besides that, I went through all the code and changed, added or deleted certain classes or XML files with better practice than before. All the classes and files are simple to understand now with the purpose, where things are inside, and better groupings for location controls.</p>
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
 
-      <h3>4. Reflection</h3>
-      <p>Many files were deleted and then repurposed during this. Now, the classes handle the main login screen, dashboard screen, notes screen and DBHelper (untouched). The XML files in the drawable files handle all icon and text configurations, images, and anything else related to customization. The layout XML files handle the location, colors, and look of everything on each screen. These files are then pulled together by the classes and AndroidManifest.xml. All of these changes together made a signifcant change to the UI/UX of the application.</p>
-    </div>
-  </div>
-</div>    
-</main>
-<footer>
-  © 2025 Garret Blake
-</footer>
+    function createParticles(count) {
+      particles = [];
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 2 + 1,
+          dx: (Math.random() - 0.5) * 0.5,
+          dy: (Math.random() - 0.5) * 0.5
+        });
+      }
+    }
 
-<script>
-  const canvas = document.getElementById("particles");
-  const ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#b3e6ff";
+      ctx.shadowColor = "#b3e6ff";
+      ctx.shadowBlur = 10;
 
-  const particles = Array.from({ length: 80 }, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 1,
-    dx: Math.random() * 0.5 - 0.25,
-    dy: Math.random() * 0.5 - 0.25
-  }));
+      for (let p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
 
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#b3e6ff";
-    ctx.shadowColor = "#b3e6ff";
-    ctx.shadowBlur = 10;
+        p.x += p.dx;
+        p.y += p.dy;
 
-    particles.forEach(p => {
-      p.x += p.dx;
-      p.y += p.dy;
-      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fill();
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      }
+      requestAnimationFrame(animateParticles);
+    }
+
+    window.addEventListener("resize", () => {
+      resizeCanvas();
+      createParticles(100);
     });
-    requestAnimationFrame(animate);
-  }
 
-  animate();
-
-  window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-</script>
+    resizeCanvas();
+    createParticles(100);
+    animateParticles();
+  </script>
 </body>
 </html>
