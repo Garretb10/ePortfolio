@@ -1,231 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ePortfolio</title>
-  <style>
-    :root {
-      --bg: #0b0c10;
-      --surface: #1c1f26;
-      --text: #f0f0f0;
-      --muted: #aaa;
-      --highlight: #61dafb;
-      --accent: #38bdf8;
-      --hover: #0ea5e9;
-      --shadow: rgba(0, 0, 0, 0.4);
-      --icy: #b3e6ff;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ePortfolio</title>
+<style>
+:root {
+--bg: #0b0c10;
+--surface: #1c1f26;
+--text: #f0f0f0;
+--muted: #aaa;
+--highlight: #61dafb;
+--accent: #38bdf8;
+--hover: #0ea5e9;
+--shadow: rgba(0, 0, 0, 0.4);
+--icy: #b3e6ff;
+}
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: url('lower-background.png') center center / cover no-repeat fixed;
-      background-color: var(--bg);
-      color: var(--icy);
-      overflow-x: hidden;
-      overflow-y: auto;
-      min-height: 100vh;
-      background-size: cover;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    
-    @media (max-width: 768px) {
-      body {
-        background-attachment: scroll;
-        background-position: center top;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-    }
+body {
+margin: 0;
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+background: url('lower-background.png') center center / cover no-repeat fixed;
+background-color: var(--bg);
+color: var(--icy);
+overflow-x: hidden;
+overflow-y: auto;
+min-height: 100vh;
+background-size: cover;
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center;
+}
 
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
+@media (max-width: 768px) {
+body {
+background-attachment: scroll;
+background-position: center top;
+background-repeat: no-repeat;
+background-size: cover;
+}
+}
 
-    header {
-      background: rgba(20, 25, 35, 0.7);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      width: 100%;
-      padding: 2rem 1rem 1.2rem;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
+canvas {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 0;
+}
 
-    header h1 {
-      color: #ffffff;
-      font-size: 2.5rem;
-      text-shadow: 0 0 10px rgba(0, 200, 255, 0.85);
-    }
-    header p {
-      color: #d0f0ff;
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-      text-shadow: 0 0 6px rgba(0, 200, 255, 0.65);
-    }
-    
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-        
-    .grid {
-      display: grid;
-      flex-wrap: wrap;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 6rem;
-      justify-items: center;
-    }
+header {
+background: rgba(20, 25, 35, 0.7);
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+width: 100%;
+padding: 2rem 1rem 1.2rem;
+text-align: center;
+position: relative;
+z-index: 1;
+}
 
-    .top-row {
-      justify-content: center;
-    }
-    
-    .bottom-row {
-      justify-content: center;
-    }
-        
-    .card {
-      background-color: rgba(28, 31, 38, 0.88);
-      padding: 1.8rem;
-      border-radius: 12px;
-      border: 1px solid rgba(56, 189, 248, 0.15);
-      box-shadow: 0 0 10px rgba(56, 189, 248, 0.05), 0 0 30px rgba(56, 189, 248, 0.03);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 350px;
-      height: 160px;
-      z-index: 2;
-      position: relative;
-      text-align: left;
-    }
+header h1 {
+color: #ffffff;
+font-size: 2.5rem;
+text-shadow: 0 0 10px rgba(0, 200, 255, 0.85);
+}
+header p {
+color: #d0f0ff;
+font-size: 1.1rem;
+margin-top: 0.5rem;
+text-shadow: 0 0 6px rgba(0, 200, 255, 0.65);
+}
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 12px var(--hover);
-    }
+main {
+flex: 1;
+max-width: 1100px;
+margin: 2rem auto;
+padding: 0 1rem;
+}
 
-    .centered-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
+.grid {
+display: grid;
+flex-wrap: wrap;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 6rem;
+justify-items: center;
+}
 
-    .card h2 {
-      margin-top: 0;
-      margin: 0 0 0.5rem;
-      font-size: 1.2rem;
-      line-height: 1.2;
-      color: #f0f0f0;
-      color: var(--icy);
-      text-shadow: 0 0 6px var(--hover);
-      transition: text-shadow 0.3s ease, color 0.3s ease;
-    }
-    
-    .card:hover h2 {
-      text-shadow: 0 0 12px rgba(56, 189, 248, 1);
-      color: #8eeeff;
-    }
+.top-row {
+justify-content: center;
+}
 
-    .card p {
-      color: var(--icy);
-      flex-grow: 1;
-      margin-bottom: 1rem;
-      font-size: 0.8rem;
-      line-height: 1.4;
-    }
+.bottom-row {
+justify-content: center;
+}
 
-    .card a {
-      display: inline-block;
-      margin-top: auto;
-      align-self: flex-start;
-      padding: 0.4rem 0.9rem;
-      font-size: .85rem; 
-      background-color: var(--accent);
-      color: #000;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
+.card {
+background-color: rgba(28, 31, 38, 0.88);
+padding: 1.8rem;
+border-radius: 12px;
+border: 1px solid rgba(56, 189, 248, 0.15);
+box-shadow: 0 0 10px rgba(56, 189, 248, 0.05), 0 0 30px rgba(56, 189, 248, 0.03);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+width: 100%;
+max-width: 350px;
+height: 160px;
+z-index: 2;
+position: relative;
+text-align: left;
+}
 
-    .card a:hover {
-      background-color: var(--hover);
-    }
+.card:hover {
+transform: translateY(-6px);
+box-shadow: 0 0 12px var(--hover);
+}
 
-    .section-group {
-      transition: color 0.3s ease;
-    }
+.centered-row {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 2rem;
+margin-bottom: 2rem;
+}
 
-    .section-title {
-      color: #e0faff;
-      text-shadow: 
-        0 0 6px rgba(56, 189, 248, 0.6),
-        0 0 12px rgba(56, 189, 248, 0.4),
-        0 0 18px rgba(255, 255, 255, 0.25);
-      text-align: center;
-      display: block;
-      width: 100%;
-      font-size: 1.8rem;
-      margin: 2rem 0 1.2rem;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-    
-    .section-group:hover .section-title {
-      color: #b3e6ff;
-      text-shadow: 
-        0 0 6px rgba(255, 255, 255, 0.9),
-        0 0 12px rgba(173, 216, 230, 0.2),
-        0 0 18px rgba(56, 189, 248, 0.5);
-    }
+.card h2 {
+margin-top: 0;
+margin: 0 0 0.5rem;
+font-size: 1.2rem;
+line-height: 1.2;
+color: #f0f0f0;
+color: var(--icy);
+text-shadow: 0 0 6px var(--hover);
+transition: text-shadow 0.3s ease, color 0.3s ease;
+}
 
-    .content-wrapper {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
+.card:hover h2 {
+text-shadow: 0 0 12px rgba(56, 189, 248, 1);
+color: #8eeeff;
+}
 
-    [data-section="supporting"]:hover ~ #supporting-title,
-    [data-section="enhancements"]:hover ~ #enhancements-title {
-      color: var(--hover);
-      text-shadow: 0 0 12px var(--highlight);
-    }
-    
-    nav.spacer-nav {
-      background: rgba(28, 34, 44, 0.5);
-      padding: 1rem;
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #2a2d33;
-      width: 100%;
-      box-sizing: border-box;
-      margin: 0;
-      border-radius: 0;
-    }
+.card p {
+color: var(--icy);
+flex-grow: 1;
+margin-bottom: 1rem;
+font-size: 0.8rem;
+line-height: 1.4;
+}
+
+.card a {
+display: inline-block;
+margin-top: auto;
+align-self: flex-start;
+padding: 0.4rem 0.9rem;
+font-size: .85rem; 
+background-color: var(--accent);
+color: #000;
+text-decoration: none;
+border-radius: 6px;
+font-weight: bold;
+transition: background-color 0.3s ease;
+}
+
+.card a:hover {
+background-color: var(--hover);
+}
+
+.section-group {
+transition: color 0.3s ease;
+}
+
+.section-title {
+color: #e0faff;
+text-shadow: 
+0 0 6px rgba(56, 189, 248, 0.6),
+0 0 12px rgba(56, 189, 248, 0.4),
+0 0 18px rgba(255, 255, 255, 0.25);
+text-align: center;
+display: block;
+width: 100%;
+font-size: 1.8rem;
+margin: 2rem 0 1.2rem;
+transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.section-group:hover .section-title {
+color: #b3e6ff;
+text-shadow: 
+0 0 6px rgba(255, 255, 255, 0.9),
+0 0 12px rgba(173, 216, 230, 0.2),
+0 0 18px rgba(56, 189, 248, 0.5);
+}
+
+[data-section="supporting"]:hover ~ #supporting-title,
+[data-section="enhancements"]:hover ~ #enhancements-title {
+color: var(--hover);
+text-shadow: 0 0 12px var(--highlight);
+}
+
+nav.spacer-nav {
+background: rgba(28, 34, 44, 0.5);
+padding: 1rem;
+backdrop-filter: blur(8px);
+border-bottom: 1px solid #2a2d33;
+width: 100%;
+box-sizing: border-box;
+margin: 0;
+border-radius: 0;
+}
 
     body::after {
       content: "";
@@ -239,166 +224,167 @@
       z-index: 1;
     }
 
-      footer {
-      width: 100%;
-      background: rgba(28, 34, 44, 0.5);
-      backdrop-filter: blur(8px);
-      border-top: 1px solid #2a2d33;
-      text-align: center;
-      padding: 1rem;
-      color: #e0f7ff;
-      font-size: 0.85rem;
-      position: relative;
-      z-index: 2;
-    }
+footer {
+text-align: center;
+margin-top: 2rem;
+padding: 1.2rem;
+position: relative;
+z-index: 2;
+color: #ffffff;
+font-size: 1rem;
+font-weight: bold;
+text-shadow:
+0 0 10px rgba(0, 200, 255, 0.85),
+0 0 20px rgba(0, 200, 255, 0.6),
+0 0 30px rgba(0, 200, 255, 0.4);
+}
 
-    @media (max-width: 768px) {
-      header {
-        padding: 1.2rem 0.5rem;
-      }    
-      header h1 {
-        font-size: 1.8rem;
-        line-height: 1.2;
-      }   
-      header p {
-        font-size: 0.95rem;
-      }    
-      nav {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 0.8rem;
-      }  
-      nav a {
-        font-size: 0.95rem;
-        padding: 0.4rem;
-      }
-      .grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      .card {
-        max-width: 90%;
-        padding: 1.4rem;
-      }
+@media (max-width: 768px) {
+header {
+padding: 1.2rem 0.5rem;
+}    
+header h1 {
+font-size: 1.8rem;
+line-height: 1.2;
+}   
+header p {
+font-size: 0.95rem;
+}    
+nav {
+flex-direction: column;
+gap: 0.5rem;
+padding: 0.8rem;
+}  
+nav a {
+font-size: 0.95rem;
+padding: 0.4rem;
+}
+.grid {
+grid-template-columns: 1fr;
+gap: 1.5rem;
+}
+.card {
+max-width: 90%;
+padding: 1.4rem;
+}
 
-      nav.spacer-nav {
-        padding: 0.75rem 0.5rem;
-      }
-    }
-  </style>
+nav.spacer-nav {
+padding: 0.75rem 0.5rem;
+}
+}
+</style>
 </head>
-  
+
 <body>
-  <canvas id="particles"></canvas>
-  <header>
-    <h1>ePortfolio</h1>
-    <p>A showcase of my growth in the Computer Science program</p>
-  </header>
+<canvas id="particles"></canvas>
+<header>
+<h1>ePortfolio</h1>
+<p>A showcase of my growth in the Computer Science program</p>
+</header>
 
-  <nav class="spacer-nav"></nav>
-  <div class="content-wrapper">
-    
+<nav class="spacer-nav"></nav>
+<div class="lower-background">
+
 <main>
-  <section class="section-group">
-    <h2 class="section-title">Supporting Materials:</h2>
-    <div class="grid top-row">
-      <div class="card">
-        <h2>Professional and Enhancement Summaries</h2>
-        <p>A reflection of my accomplishments and progress in the Computer Science field.</p>
-        <a href="professional-summary.html">View Summary</a>
-      </div>
-      <div class="card">
-        <h2>Initial Review of the Original Code</h2>
-        <p>A walkthrough of the original project code and a review of areas for enhancement.</p>
-        <a href="initial-code-review.html">View Code Review</a>
-      </div>
-      <div class="card">
-        <h2>Final Product Screenshots and Highlights</h2>
-        <p>Screenshots of the final product and each enhancement step throughout the process.</p>
-        <a href="final-product.html">View Screenshots</a>
-      </div>
-    </div>
-  </section>
+<section class="section-group">
+<h2 class="section-title">Supporting Materials:</h2>
+<div class="grid">
+<div class="card">
+<h2>Professional and Enhancement Summaries</h2>
+<p>A reflection of my accomplishments and progress in the Computer Science field.</p>
+<a href="professional-summary.html">View Summary</a>
+</div>
+<div class="card">
+<h2>Initial Review of the Original Code</h2>
+<p>A walkthrough of the original project code and a review of areas for enhancement.</p>
+<a href="initial-code-review.html">View Code Review</a>
+</div>
+<div class="card">
+<h2>Final Product Screenshots and Highlights</h2>
+<p>Screenshots of the final product and each enhancement step throughout the process.</p>
+<a href="final-product.html">View Screenshots</a>
+</div>
+</div>
+</section>
 
-  <section class="section-group">
-    <h2 class="section-title">Enhancements:</h2>
-    <div class="grid bottom-row">
-      <div class="card">
-        <h2>Software Design and Engineering Enhancement</h2>
-        <p>Enhancing UI structure, responsiveness, and feature logic to follow modern design standards.</p>
-        <a href="software-design.html">View Enhancement</a>
-      </div>
-      <div class="card">
-        <h2>Algorithms and Data Structures Enhancement</h2>
-        <p>Improvements in performance, logic, and structured implementation.</p>
-        <a href="data-structure-and-algorithm.html">View Enhancement</a>
-      </div>
-      <div class="card">
-        <h2>Database and Backend Enhancement</h2>
-        <p>Improved data validation, secure storage, and best practices in local data management.</p>
-        <a href="databases.html">View Enhancement</a>
-      </div>
-    </div>
-  </section>
+<section class="section-group">
+<h2 class="section-title">Enhancements:</h2>
+<div class="grid">
+<div class="card">
+<h2>Software Design and Engineering Enhancement</h2>
+<p>Enhancing UI structure, responsiveness, and feature logic to follow modern design standards.</p>
+<a href="software-design.html">View Enhancement</a>
+</div>
+<div class="card">
+<h2>Algorithms and Data Structures Enhancement</h2>
+<p>Improvements in performance, logic, and structured implementation.</p>
+<a href="data-structure-and-algorithm.html">View Enhancement</a>
+</div>
+<div class="card">
+<h2>Database and Backend Enhancement</h2>
+<p>Improved data validation, secure storage, and best practices in local data management.</p>
+<a href="databases.html">View Enhancement</a>
+</div>
+</div>
+</section>
 </main>
 
-    
-  <footer>
-    © 2025 Garret Blake
-  </footer>
+<footer>
+© 2025 Garret Blake
+</footer>
 
 
-  <script>
-    const canvas = document.getElementById("particles");
-    const ctx = canvas.getContext("2d");
-    let particles = [];
+<script>
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+let particles = [];
 
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
+function resizeCanvas() {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+}
 
-    function createParticles(count) {
-      particles = [];
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          r: Math.random() * 2 + 1,
-          dx: (Math.random() - 0.5) * 0.5,
-          dy: (Math.random() - 0.5) * 0.5
-        });
-      }
-    }
+function createParticles(count) {
+particles = [];
+for (let i = 0; i < count; i++) {
+particles.push({
+x: Math.random() * canvas.width,
+y: Math.random() * canvas.height,
+r: Math.random() * 2 + 1,
+dx: (Math.random() - 0.5) * 0.5,
+dy: (Math.random() - 0.5) * 0.5
+});
+}
+}
 
-    function animateParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#b3e6ff";
-      ctx.shadowColor = "#b3e6ff";
-      ctx.shadowBlur = 10;
+function animateParticles() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.fillStyle = "#b3e6ff";
+ctx.shadowColor = "#b3e6ff";
+ctx.shadowBlur = 10;
 
-      for (let p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
+for (let p of particles) {
+ctx.beginPath();
+ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+ctx.fill();
 
-        p.x += p.dx;
-        p.y += p.dy;
+p.x += p.dx;
+p.y += p.dy;
 
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      }
-      requestAnimationFrame(animateParticles);
-    }
+if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+}
+requestAnimationFrame(animateParticles);
+}
 
-    window.addEventListener("resize", () => {
-      resizeCanvas();
-      createParticles(100);
-    });
+window.addEventListener("resize", () => {
+resizeCanvas();
+createParticles(100);
+});
 
-    resizeCanvas();
-    createParticles(100);
-    animateParticles();
-  </script>
+resizeCanvas();
+createParticles(100);
+animateParticles();
+</script>
 </body>
 </html>
