@@ -25,10 +25,12 @@
       overflow-x: hidden;
       overflow-y: auto;
       min-height: 100vh;
-      background: url('lower-background.png') no-repeat center center fixed;
-      background-size: cover;
+      background: url('lower-background.png') center center / cover no-repeat fixed;
       background-color: var(--bg);
-      position: relative;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
     }
 
     canvas {
@@ -217,11 +219,18 @@
       text-align: center;
       margin-top: 1rem;
       padding: 1rem;
-      color: var(--muted);
+      color: #f6fbff;
       font-size: 0.85rem;
+      text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(56, 189, 248, 0.5);
     }
     
     @media (max-width: 768px) {
+      background-size: 100% 100%;
+      background-attachment: scroll;
+      }
+
       header {
         padding: 1.2rem 0.5rem;
       }    
