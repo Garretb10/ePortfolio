@@ -223,17 +223,23 @@
       z-index: 1;
     }
 
-    footer {
+    .footer-bar {
       width: 100%;
       background: rgba(28, 34, 44, 0.5);
-      backdrop-filter: blur(8px);
       border-top: 1px solid #2a2d33;
-      text-align: center;
-      padding: 1rem;
-      color: #e0f7ff;
-      font-size: 0.85rem;
+      backdrop-filter: blur(8px);
       position: relative;
       z-index: 2;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 1rem;
+      padding: 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      background: rgba(28, 34, 44, 0.5);
+      backdrop-filter: blur(8px);
     }
 
     @media (max-width: 768px) {
@@ -325,10 +331,13 @@
     </div>
   </section>
 </main>
-
+    
+<div class="footer-bar">
   <footer>
     © 2025 Garret Blake
   </footer>
+</div>
+
 
   <script>
     const canvas = document.getElementById("particles");
