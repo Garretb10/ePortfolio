@@ -163,21 +163,24 @@
     }
 
     .section-title {
-      color: #9eeeff;
-      text-shadow: 0 0 10px #48d6ff(--hover);
+      color: #f8fcff;
+      text-shadow: 
+        0 0 4px rgba(255, 255, 255, 0.4),
+        0 0 6px rgba(255, 255, 255, 0.2);
       text-align: center;
       display: block;
       width: 100%;
       font-size: 1.8rem;
       margin: 2rem 0 1.2rem;
-    }
-
-    .section-group:hover .section-title {
-      color: #f6fbff;
-      text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.9),
-        0 0 16px rgba(56, 189, 248, 0.5);
       transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    
+    .section-group:hover .section-title {
+      color: #e0faff;
+      text-shadow: 
+        0 0 6px rgba(56, 189, 248, 0.6),
+        0 0 12px rgba(56, 189, 248, 0.4),
+        0 0 18px rgba(255, 255, 255, 0.25);
     }
     
     [data-section="supporting"]:hover ~ #supporting-title,
