@@ -37,10 +37,13 @@
     }
 
     header {
-      background: url('lower-background.png') no-repeat center center;
+      background: linear-gradient(rgba(11, 12, 16, 0.7), rgba(11, 12, 16, 0.7)),
+                  url('lower-background.png') no-repeat center center;
       background-size: cover;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       width: 100%;
-      padding: 1rem 1rem 0.75rem;
+      padding: 2rem 1rem 1.2rem;
       text-align: center;
       position: relative;
       z-index: 1;
