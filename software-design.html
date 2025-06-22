@@ -24,6 +24,7 @@
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: url('lower-background.png') center center / cover no-repeat fixed;
       background-color: var(--bg);
       color: var(--icy);
       overflow-x: hidden;
@@ -44,13 +45,13 @@
     }
 
     header {
-      background: url('lower-background.png') no-repeat center center;
-      background-size: cover;
       width: 100%;
       padding: 2rem 1rem 1.2rem;
       text-align: center;
       position: relative;
       z-index: 1;
+      background: rgba(11, 12, 16, 0.6);
+      backdrop-filter: blur(6px);
     }
 
     header h1 {
@@ -175,9 +176,15 @@
       padding: 1rem;
       color: var(--muted);
       font-size: 0.85rem;
+      background: rgba(28, 34, 44, 0.5);
+      backdrop-filter: blur(8px);
     }
 
     @media (max-width: 600px) {
+      body {
+        background-attachment: scroll;
+      }
+
       main {
         display: block;
         padding: 1rem;
@@ -244,6 +251,7 @@
 </head>
 <body>
 <canvas id="particles"></canvas>
+
 
 <header>
   <h1>Software Design Enhancement</h1>
