@@ -20,17 +20,25 @@
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: url('lower-background.png') center center / cover no-repeat fixed;
       background-color: var(--bg);
       color: var(--icy);
       overflow-x: hidden;
       overflow-y: auto;
       min-height: 100vh;
-      background: url('lower-background.png') center center / cover no-repeat fixed;
-      background-color: var(--bg);
+      background-size: cover;
       background-attachment: fixed;
       background-repeat: no-repeat;
-      background-size: cover;
-      background-position: relative;
+      background-position: center;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     }
 
     canvas {
@@ -227,10 +235,6 @@
     }
     
     @media (max-width: 768px) {
-      background-size: 100% 100%;
-      background-attachment: scroll;
-      }
-
       header {
         padding: 1.2rem 0.5rem;
       }    
