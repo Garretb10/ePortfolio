@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Database Enhancement</title>
   <style>
     :root {
@@ -24,13 +24,10 @@
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: url('lower-background.png') center center / cover no-repeat fixed;
       background-color: var(--bg);
       color: var(--icy);
       overflow-x: hidden;
-    }
-
-    .narrative-block {
-      margin-bottom: 1.5rem;
     }
 
     canvas {
@@ -43,21 +40,21 @@
     }
 
     header {
-      background: url('lower-background.png') no-repeat center center;
-      background-size: cover;
       width: 100%;
       padding: 2rem 1rem 1.2rem;
       text-align: center;
       position: relative;
       z-index: 1;
+      background: rgba(11, 12, 16, 0.6);
+      backdrop-filter: blur(6px);
     }
-    
+
     header h1 {
       color: #ffffff;
       font-size: 2.5rem;
       text-shadow: 0 0 10px rgba(0, 200, 255, 0.85);
     }
-    
+
     header p {
       color: #d0f0ff;
       font-size: 1.1rem;
@@ -81,7 +78,7 @@
       font-weight: bold;
       transition: color 0.3s ease, text-shadow 0.3s ease;
     }
-    
+
     nav a:hover {
       color: #8eeeff;
       text-shadow: 0 0 8px #38bdf8;
@@ -104,7 +101,7 @@
       box-shadow: 0 0 10px rgba(56, 189, 248, 0.05), 0 0 30px rgba(56, 189, 248, 0.03);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    
+
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 0 12px var(--hover);
@@ -133,7 +130,7 @@
     p {
       color: var(--icy);
       text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       line-height: 1.6;
       margin-bottom: 1.2rem;
     }
@@ -160,11 +157,6 @@
       gap: 2rem;
     }
 
-    
-    .narrative-block {
-      break-inside: avoid;
-    }
-
     .top-section {
       display: flex;
       flex-direction: column;
@@ -172,12 +164,29 @@
       margin-bottom: 2rem;
     }
 
+    body::after {
+      content: "";
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background: linear-gradient(to bottom, transparent, rgba(5, 7, 10, 0.7) 90%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
     footer {
+      width: 100%;
+      background: rgba(28, 34, 44, 0.5);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid #2a2d33;
       text-align: center;
-      margin-top: 1rem;
-      padding: 0.5rem;
-      color: var(--muted);
+      padding: 1rem;
+      color: #e0f7ff;
       font-size: 0.85rem;
+      position: relative;
+      z-index: 2;
     }
 
     @media (max-width: 600px) {
@@ -197,7 +206,6 @@
         flex: 1 1 46%;
         max-width: 46%;
         padding: 0.75rem;
-        justify-content: space-between;
       }
 
       header h1 {
@@ -223,7 +231,6 @@
       nav a {
         font-size: 0.9rem;
         padding: 0.5rem;
-        text-align: center;
       }
 
       .card {
@@ -241,7 +248,8 @@
   </style>
 </head>
 <body>
-  <canvas id="particles"></canvas>
+<canvas id="particles"></canvas>
+  
   <header>
     <h1>Database Enhancement</h1>
     <p>CS 499 Capstone</p>
