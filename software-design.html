@@ -44,26 +44,26 @@
     }
 
     header {
-      background-color: transparent;
-      padding: 2rem 1rem;
+      background: url('lower-background.png') no-repeat center center;
+      background-size: cover;
+      width: 100%;
+      padding: 2rem 1rem 1.2rem;
       text-align: center;
       position: relative;
       z-index: 1;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2.6rem;
-      font-weight: 700;
-      color: var(--accent);
-      text-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
+      color: #ffffff;
+      font-size: 2.5rem;
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.85);
     }
     
     header p {
-      margin-top: 0.5rem;
+      color: #d0f0ff;
       font-size: 1.1rem;
-      color: var(--highlight);
-      text-shadow: 0 0 6px rgba(56, 189, 248, 0.7);
+      margin-top: 0.5rem;
+      text-shadow: 0 0 6px rgba(0, 200, 255, 0.65);
     }
 
     nav {
@@ -108,7 +108,7 @@
     
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 0 10px rgba(56, 189, 248, 0.05), 0 0 30px rgba(56, 189, 248, 0.03);
+      box-shadow: 0 0 12px var(--hover);
     }
 
     h2 {
