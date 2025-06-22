@@ -21,6 +21,11 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -28,6 +33,8 @@
       background-color: var(--bg);
       color: var(--icy);
       overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .narrative p {
@@ -96,6 +103,7 @@
       max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;
+      flex: 1;
     }
 
     .card {
